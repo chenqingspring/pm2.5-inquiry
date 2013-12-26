@@ -1,8 +1,19 @@
 require 'sinatra'
 require 'wei-backend'
+require 'httparty'
+
+require_relative  'env.rb'
 
 on_text do
-    "你发送了如下内容: #{params[:Content]}!!"
+    parsed_json = (HTTParty.get("#{SETTINGS[:pm25_query_url]}?city=#{params[:Content]}&token=#{SETTINGS[:token]}")).parsed_response
+    result = []
+    parsed_json.map do |item|
+      result << {
+          :title => item['position_name'],
+          :description => "#{item['pm2_5']} #{item['quality']}"
+      }
+    end
+  result
 end
 
 on_subscribe do
