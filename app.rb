@@ -7,15 +7,15 @@ require_relative  'env.rb'
 on_text do
     parsed_json = (HTTParty.get("#{SETTINGS[:pm25_query_url]}?city=#{params[:Content]}&token=#{SETTINGS[:token]}")).parsed_response
     result = []
-    parsed_json.map do |item|
+    parsed_json.each do |item|
       result << {
           :title => item['position_name'],
-          :description => "#{item['pm2_5']} #{item['quality']}",
-          :picture_url => '',
-          :url => ''
+          :description => "#{item['pm2_5']}#{item['quality']}"
       }
     end
-  result
+
+    return result[0..9] if result.length > 10
+    result
 end
 
 on_subscribe do
