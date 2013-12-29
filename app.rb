@@ -9,8 +9,8 @@ on_text do
     result = []
     parsed_json.each do |item|
       result << {
-          :title => item['position_name'],
-          :description => "#{item['pm2_5']}#{item['quality']}"
+          :title => "#{item['position_name']} #{item['pm2_5']} #{item['quality']}"
+          #:description => "#{item['pm2_5']}#{item['quality']}"
       }
     end
 
