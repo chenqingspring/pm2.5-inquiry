@@ -19,9 +19,9 @@ on_text do
 end
 
 on_subscribe do
-    "感谢您的订阅！请发送城市名称(拼音)或区号进行查询，例如:北京(beijing)或010"
+  '欢迎订阅！请发送查询城市(拼音)或区号，例如:北京(beijing)或010。功能继续完善ing...!'
 end
 
 on_unsubscribe do
-    "欢迎您再次订阅！"
+  '欢迎您再次订阅！'
 end
