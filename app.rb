@@ -10,14 +10,16 @@ on_text do
     parsed_json.map do |item|
       result << {
           :title => item['position_name'],
-          :description => "#{item['pm2_5']} #{item['quality']}"
+          :description => "#{item['pm2_5']} #{item['quality']}",
+          :picture_url => '',
+          :url => ''
       }
     end
   result
 end
 
 on_subscribe do
-    "感谢您的订阅！请发送城市名称(拼音)或区号进行查询，例如:'北京(beijing)或010'"
+    "感谢您的订阅！请发送城市名称(拼音)或区号进行查询，例如:北京(beijing)或010"
 end
 
 on_unsubscribe do
