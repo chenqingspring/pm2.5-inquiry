@@ -2,6 +2,7 @@ require 'sinatra'
 require 'wei-backend'
 require 'httparty'
 require 'uri'
+require 'date'
 
 require_relative  'env.rb'
 
@@ -13,10 +14,12 @@ on_text do
       return '请发送查询城市(拼音)或区号，例如:北京(beijing)或010'
     end
 
+    time_formater(parsed_json.last['time_point'])
+
     result = []
       result << {
          :title => "查询城市:#{parsed_json.last['area']}",
-         :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{parsed_json.last['time_point']}"
+         :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{@time}"
       }
 end
 on_subscribe do
@@ -25,4 +28,15 @@ end
 
 on_unsubscribe do
   '欢迎您再次订阅！'
+end
+
+
+def time_formater(time_string)
+  time_info = DateTime.parse(time_string)
+  year = time_info.year
+  month = time_info.month
+  day = time_info.day
+  hour = time_info.hour
+  min = time_info.min
+  @time = "#{year}年#{month}月#{day}日#{hour}时#{min}分"
 end
