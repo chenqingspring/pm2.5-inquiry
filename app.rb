@@ -1,11 +1,12 @@
 require 'sinatra'
 require 'wei-backend'
 require 'httparty'
+require 'uri'
 
 require_relative  'env.rb'
 
 on_text do
-    parsed_json = (HTTParty.get("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}")).parsed_response
+    parsed_json = (HTTParty.get(URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}").to_s)).parsed_response
     result = []
       result << {
          :title => "查询城市:#{parsed_json.last['area']}",
