@@ -1,2 +1,2 @@
-pm25_query_url: 'http://www.pm25.in/api/querys/pm2_5.json'
-token: 'RQCxTwiUMjhhcL4k3S3a'
+:pm25_query_url: 'http://www.pm25.in/api/querys/pm2_5.json'
+:token: 'RQCxTwiUMjhhcL4k3S3a'
