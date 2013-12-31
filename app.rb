@@ -5,17 +5,11 @@ require 'httparty'
 require_relative  'env.rb'
 
 on_text do
-    parsed_json = (HTTParty.get("#{SETTINGS[:pm25_query_url]}?city=#{params[:Content]}&token=#{SETTINGS[:token]}")).parsed_response
+    parsed_json = (HTTParty.get("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}")).parsed_response
     result = []
-    parsed_json.each do |item|
       result << {
-          :title => "#{item['position_name']} #{item['pm2_5']} #{item['quality']}"
-          #:description => "#{item['pm2_5']}#{item['quality']}"
+          :title => "该城市的pm2.5平均值为#{result.last['pm2_5']}污染等级为#{result.last['quality']}"          
       }
-    end
-
-    return result[0..9] if result.length > 10
-    result
 end
 
 on_subscribe do
