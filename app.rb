@@ -6,7 +6,9 @@ require 'uri'
 require_relative  'env.rb'
 
 on_text do
-    parsed_json = (HTTParty.get(URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}").to_s)).parsed_response
+    url = URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}".strip).to_s
+    parsed_json = (HTTParty.get(url)).parsed_response
+    return '请发送查询城市(拼音)或区号，例如:北京(beijing)或010' unless parsed_json['error'].nil?
     result = []
       result << {
          :title => "查询城市:#{parsed_json.last['area']}",
