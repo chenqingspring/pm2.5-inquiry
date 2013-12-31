@@ -9,7 +9,7 @@ on_text do
     result = []
       result << {
          :title => "查询城市:#{parsed_json.last['area']}",
-         :description => "    pm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{parsed_json.last['time_point']}"
+         :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{parsed_json.last['time_point']}"
       }
 end
 on_subscribe do
