@@ -8,7 +8,7 @@ on_text do
     parsed_json = (HTTParty.get("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}")).parsed_response
     result = []
       result << {
-         :title => "#{parsed_json.last['area']}在#{parsed_json.last['time_point']}时刻的pm2.5平均值为:#{parsed_json.last['pm2_5']} 污染等级为:#{parsed_json.last['quality']}"
+         :title => "城市:#{parsed_json.last['area']}\npm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n 发布时间:#{parsed_json.last['time_point']}"
       }
 end
 on_subscribe do
