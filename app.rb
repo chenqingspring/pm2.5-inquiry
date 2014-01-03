@@ -4,7 +4,8 @@ require 'httparty'
 require 'uri'
 require 'date'
 
-require_relative  'env.rb'
+require_relative 'env.rb'
+require_relative 'controller'
 
 on_text do
     url = URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}".strip).to_s
@@ -14,12 +15,13 @@ on_text do
       return '请发送查询城市(拼音)或区号，例如:北京(beijing)或010'
     end
 
-    time_formater(parsed_json.last['time_point'])
+    time_format(parsed_json.last['time_point'])
 
     result = []
       result << {
          :title => "查询城市:#{parsed_json.last['area']}",
-         :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{@time}"
+         :description => "        pm2.5平均值:#{parsed_json.last['pm2_5_24h']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{@time}",
+         :url => "#{SETTINGS['production_url']}/zones/#{params[:Content]}"
       }
 end
 on_subscribe do
@@ -31,7 +33,7 @@ on_unsubscribe do
 end
 
 
-def time_formater(time_string)
+def time_format(time_string)
   time_info = DateTime.parse(time_string)
   year = time_info.year
   month = time_info.month
