@@ -12,7 +12,7 @@ on_text do
     parsed_json = (HTTParty.get(url)).parsed_response
 
     if parsed_json.is_a?(Hash) && !parsed_json['error'].nil?
-      return '请发送查询城市(拼音)或区号，例如:北京(beijing)或010'
+      return "抱歉！#{parsed_json['error']},我们会尽快提供！"
     end
 
     time_format(parsed_json.last['time_point'])
