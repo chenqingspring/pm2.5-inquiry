@@ -15,7 +15,7 @@ set :stage, :production
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'ec2-54-199-131-70.ap-northeast-1.compute.amazonaws.com', user: 'ec2-user', roles: [:app], ssh_options: {
+server '54.199.131.70', user: 'ec2-user', roles: [:app], ssh_options: {
     keys: [File.join(ENV["HOME"], 'Downloads', 'credential.pem')]
 }
 
@@ -58,7 +58,6 @@ end
 namespace :production do
   task :check_configuration do
     on roles(:app) do
-      #execute 'sudo bash'
       execute "sudo chgrp ec2-user /var/www"
       execute "sudo chmod 775 /var/www"
       execute "sudo chown -R ec2-user /var/www/*"
