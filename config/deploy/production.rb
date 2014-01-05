@@ -43,24 +43,44 @@ server '54.199.131.70', user: 'ec2-user', roles: [:app], ssh_options: {
 
 # fetch(:default_env).merge!(rails_env: :production)
 
-before 'deploy:check', 'production:check_configuration'
+before 'deploy:check', 'production:change_directory_permission'
+after 'deploy:updated', 'production:check_configuration'
+after 'deploy', 'production:auto_start_apache'
 
 namespace :deploy do
   task :restart do
     on roles(:app) do
-      execute "sudo ln -fs #{deploy_to}/current/config/deploy/passenger.conf /etc/httpd/conf.d/passenger.conf"
-      execute 'sudo /sbin/chkconfig --level 2345 httpd on'
-      execute 'sudo /etc/init.d/httpd restart'
+      sudo '/etc/init.d/httpd restart'
     end
   end
+
+  task :start do
+    on roles(:app) do
+      sudo '/etc/init.d/httpd start'
+    end
+  end
+
 end
 
 namespace :production do
-  task :check_configuration do
+  task :change_directory_permission do
     on roles(:app) do
-      execute "sudo chgrp ec2-user /var/www"
-      execute "sudo chmod 775 /var/www"
-      execute "sudo chown -R ec2-user /var/www/*"
+      sudo "chgrp ec2-user /var/www"
+      sudo "chmod 775 /var/www"
+      sudo "chown -R ec2-user /var/www/*"
     end
   end
+
+  task :check_configuration do
+    on roles(:app) do
+      sudo "ln -fs #{deploy_to}/current/config/deploy/passenger.conf /etc/httpd/conf.d/passenger.conf"
+    end
+  end
+
+  task :auto_start_apache do
+    on roles(:app) do
+      sudo '/sbin/chkconfig --level 2345 httpd on'
+    end
+  end
+
 end
