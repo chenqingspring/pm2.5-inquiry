@@ -4,3 +4,7 @@ table {
 #zones {
     padding: 1.2em;
 }
+
+#zones .alert {
+    margin-bottom: 5px
+}
