@@ -4,8 +4,8 @@ require 'httparty'
 require 'uri'
 require 'date'
 
-require_relative 'env.rb'
-require_relative 'controller'
+require_relative '../lib/env'
+require_relative '../controller/controller'
 
 on_text do
     url = URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}".strip).to_s

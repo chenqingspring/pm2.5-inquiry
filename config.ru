@@ -1,4 +1,4 @@
-require './app'
+require './app/app.rb'
 
 ENV['RACK_ENV'] ||= development
 
