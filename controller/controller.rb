@@ -4,9 +4,14 @@ get '/zones/:city' do
 
   parsed_json.delete(parsed_json.last)
 
-  results = ["#{parsed_json.last['area']}各地区pm2.5指数如下:"]
+  results = [{ :title => "#{parsed_json.last['area']}各地区pm2.5指数如下:"}]
   parsed_json.each do |zone|
-    results << "#{zone['position_name']}  #{zone['pm2_5_24h']}  #{zone['quality']}"  unless zone['pm2_5_24h'].to_int == 0
+    results << {
+        :position_name => zone['position_name'],
+        :pm2_5 => zone['pm2_5'],
+        :quality => zone['quality']
+    } unless zone['pm2_5'].to_int == 0
   end
+
   haml :zones, :locals => { :zones =>results }
 end

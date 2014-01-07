@@ -1,0 +1,23 @@
+#zones
+  %tbody
+    %h4
+      = zones.first[:title]
+    - zones[1..zones.length].each do |zone|
+      - value = zone[:pm2_5].to_int
+      - message = "#{zone[:position_name]}  #{zone[:pm2_5]}  #{zone[:quality]}"
+      - if value < 50
+        %div.alert.alert-success
+          = message
+      - elsif value >= 50 && value < 150
+        %div.alert.alert-info
+          = message
+      - elsif value >= 150 && value < 300
+        %div.alert.alert-warning
+          = message
+      - elsif value >= 300
+        %div.alert.alert-danger
+          = message
+
+
+
+
