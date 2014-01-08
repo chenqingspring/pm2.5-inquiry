@@ -4,19 +4,25 @@
       = zones.first[:title]
     - zones[1..zones.length].each do |zone|
       - value = zone[:pm2_5].to_int
-      - message = "#{zone[:position_name]}  #{zone[:pm2_5]}  #{zone[:quality]}"
-      - if value < 50
-        %div.alert.alert-success
-          = message
-      - elsif value >= 50 && value < 150
-        %div.alert.alert-info
-          = message
-      - elsif value >= 150 && value < 250
-        %div.alert.alert-warning
-          = message
-      - elsif value >= 250
-        %div.alert.alert-danger
-          = message
+      - message = "#{zone[:position_name]}  #{zone[:pm2_5]}"
+      - if value <= 50
+        %div.alert.awesome
+          = "#{message} 优"
+      - elsif value > 50 && value <=100
+        %div.alert.good
+          = "#{message} 良"
+      - elsif value > 100 && value <=150
+        %div.alert.little-polluted
+          = "#{message} 轻度污染"
+      - elsif value > 150 && value <= 200
+        %div.alert.medium-polluted
+          = "#{message} 中度污染"
+      - elsif value > 200 && value <= 300
+        %div.alert.highly-polluted
+          = "#{message} 重度污染"
+      - elsif value > 300
+        %div.alert.heavy-polluted
+          = "#{message} 严重污染"
 
 
 

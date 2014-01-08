@@ -8,3 +8,40 @@ table {
 #zones .alert {
     margin-bottom: 5px
 }
+
+.awesome {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6
+}
+
+.good {
+    color: #77733A;
+    background-color: #f0e157;
+    border-color: #e9e08f
+}
+
+.little-polluted {
+    color: #74623C;
+    background-color: #f0b279;
+    border-color: #e9c194
+}
+
+
+.medium-polluted {
+    color: #773D3A;
+    background-color: #f75352;
+    border-color: #f1777f
+}
+
+.highly-polluted {
+    color: #6E3665;
+    background-color: #DE06FC;
+    border-color: #fa9cf7
+}
+
+.heavy-polluted {
+    color: #cd025a;
+    background-color: #f23b99;
+    border-color: #eb678b
+}
