@@ -4,7 +4,7 @@ gem 'sinatra'
 gem 'wei-backend'
 gem 'httparty'
 gem 'rake'
-gem 'rspec'
+gem 'spec'
 
 group :development do
   gem 'shotgun', '~> 0.9'
