@@ -4,7 +4,8 @@ get '/zones/:city' do
 
   parsed_json.delete(parsed_json.last)
 
-  results = [{ :title => "#{parsed_json.last['area']}各地区pm2.5指数如下:"}]
+  title = "#{parsed_json.last['area']}各地区pm2.5指数如下:"
+  results=[]
   parsed_json.each do |zone|
     results << {
         :position_name => zone['position_name'],
@@ -13,5 +14,7 @@ get '/zones/:city' do
     } unless zone['pm2_5'].to_int == 0
   end
 
-  haml :zones, :locals => { :zones =>results }
+  results.sort! {|x,y| y[:pm2_5].to_i <=> x[:pm2_5].to_i }
+
+  haml :zones, :locals => { :zones =>results, :title =>title }
 end

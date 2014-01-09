@@ -1,8 +1,8 @@
 #zones
   %tbody
     %h4
-      = zones.first[:title]
-    - zones[1..zones.length].each do |zone|
+      = title
+    - zones.each do |zone|
       - value = zone[:pm2_5].to_int
       - message = "#{zone[:position_name]}  #{zone[:pm2_5]}"
       - if value <= 50
