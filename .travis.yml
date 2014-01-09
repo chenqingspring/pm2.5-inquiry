@@ -1,6 +1,8 @@
 language: ruby
+
 rvm:
 - 2.0.0
+
 env:
   global:
   - secure: ZtLnDUyAInKkfIlWjam05tJbqHCyUHC0TvXPaMRKyivqb/qL0l4jSI4X1KYIwhXh0VggbvPJONU3iDG4ze5l+nCPLsqKnsSlMOvSZUaij8r95tDmNfyh0G+UBPS1w275vRoaIWWL8Feh4Wdmbtl/VwYBnm7hKH8MpxQ9AJy/Ou4=
@@ -26,4 +28,5 @@ env:
   - secure: YIjtNNqjqAgINeGIpj8W2IlwPxAQwUIbArN78Yne5dohQbn2zwdqiJ27f/vaY9nQ+rQd/g5rkLCce4IL8cQ25lOk270B/xFl83matQxp1XI4V0crxukO8tQhSrweKfs5/g4ppmzz9g7eJI4UYSkXVJIIaklue6Y8Lqt4H2aTPyc=
   - secure: fcKz6+2+eEX9pfbS7iiaGbiV1F9DCnZKWuak5tTKM98v8PK/lu4UbfGAM6Pk78kw/Zr547HAC2Ujvo+lJ9CdNiGuJw1Emtp+EEXvgsEoNg4xNRY560b/5TyMHwLJvCaHXOXb6bsszXTihsndXwulT2r6Y++RJhj6dBd0yKK0g8U=
   - secure: cI5vSmbWdXcfTd0DHdHgxmrKG2MkZIBSjsf3eeH35fLnEZ62+kvGSD0pHkoNn1ItbMr6AArVEVS1H+azRt2neafQV45jKqY+IT7ff9B255mOC/d3r6ZcKTpVIp2CpH2EN2aUl7EKz/MVPsDEDEd3Z9HPSGLORPB0j/zc7xo33Y4=
+
 before_script: sh deploy.sh
