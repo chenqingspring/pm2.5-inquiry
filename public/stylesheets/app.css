@@ -23,25 +23,25 @@ table {
 
 .little-polluted {
     color: #74623C;
-    background-color: #f0b279;
-    border-color: #e9c194
+    background-color: #f0b778;
+    border-color: #e9c9a5
 }
 
 
 .medium-polluted {
     color: #773D3A;
-    background-color: #f75352;
-    border-color: #f1777f
+    background-color: #f7807e;
+    border-color: #f1a19e
 }
 
 .highly-polluted {
     color: #6E3665;
-    background-color: #DE06FC;
+    background-color: #fc7fee;
     border-color: #fa9cf7
 }
 
 .heavy-polluted {
-    color: #cd025a;
-    background-color: #f23b99;
+    color: #744358;
+    background-color: #f255a2;
     border-color: #eb678b
 }
