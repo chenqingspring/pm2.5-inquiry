@@ -1,4 +1,4 @@
 echo "encrypted key are follow"
-echo env.global
+echo $env.global
 
 
