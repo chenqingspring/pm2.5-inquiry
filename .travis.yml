@@ -2,12 +2,6 @@ language: ruby
 rvm:
 - 2.0.0
 - 1.9.3
-after_script: sh deploy.sh
-deploy:
-  provider: s3
-  access_key_id: AKIAJVBZGJ2WBA3FJXQA
-  secret_access_key:
-    secure: aoZ87mCNQd3/GOYSIoh5PaJZJhOX/MozU5W8yD5VWw8kqPpY057v8sE//mTq0wG1noKoJD9ZrG2yZETXM8ueQFgiTRaOcYJlfrTiXce5nNKvBqxDVqQi6Bvs1U6m0TUzuGSR38mY9ewBFFio4JyVIGbz8IAPMuUIiXyID1q1iNM=
-  bucket: '"s3 bucket"'
-  on:
-    repo: chenqingspring/pm2.5-inquiry
+after_script: ./deploy.sh
+dd:
+  secure: Hu0notVRIo7iEUwJUYPid3qpfcQw7gksjG0RKJD4885gSSLdoRZ0Zear2ZZp+ttFH3+iB7LZiRtNT74lztnoIFO2tnjzGdHfqo3PgqtMeRLAAtQOSGTrKzaiAlx5iOfjXaloNGZLyCFBr4BnwIX7XnicDfiMwT2uxpHkFEfDE5Y=
