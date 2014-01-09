@@ -1,5 +1,3 @@
-echo "encrypted key are follow"
-echo AWSAccessKeyId
-echo $AWSAccessKeyId
-echo AWSSecretKey
-echo $AWSSecretKey
+echo "ready to deploy app to ec2...."
+
+bundle exec cap production deploy

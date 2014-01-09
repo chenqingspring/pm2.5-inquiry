@@ -1,7 +1,8 @@
 language: ruby
 rvm:
 - 2.0.0
-before_script: sh deploy.sh
+- 1.9.3
+after_script: sh deploy.sh
 deploy:
   provider: s3
   access_key_id: AKIAJVBZGJ2WBA3FJXQA
