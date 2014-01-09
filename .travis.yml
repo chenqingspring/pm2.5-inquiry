@@ -1,7 +1,6 @@
 language: ruby
 rvm:
 - 2.0.0
-- 1.9.3
 after_script: bash -l ./deploy.sh
 env:
   global:
