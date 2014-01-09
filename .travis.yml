@@ -2,7 +2,10 @@ language: ruby
 rvm:
 - 2.0.0
 - 1.9.3
-after_script: ./deploy.sh
+after_script: bash -l ./deploy.sh
 secure: dmUR47L+7wQXoVMkVxfAAXkfbY4Ukq1915laUvyfg7ac4XTnEHECu1qp9p8sC552GB95zX77Rbb3aSTHO9o2uXT074PWd0GUXxXuqAib3NKyCmYPAW+2R5F2d8FjTkFCh6Nmb2KQI0OUVHbYQMwqJ6ujM4BHN35/6ewhr7FOuUQ=
 dd:
   secure: TXzTVCqkrwAMBpyRc5d2N2X5z83ynlKD7mK5zpC1GuKdQW55ilsJquG9flhfwJPnsbhHMBBXj4u1ns08NcZzh34RBc2ng/A0lPf0WeruL+mlLb7LUsZfs8eljx/k526ZPt8GPIiyodu7Y6jRJ2GDOlcYl5qStvjJ0XymqskRASU=
+env:
+  global:
+    secure: Svg/OOj10EFcwM87AJE+LvvpCjoLMj4NL+S85JXJ4VMAkdY+Q5rqODX8CCZA5JXj1EplgirBEX1bVO2XtBFZi+R3mvXnzh5fZzmeNXGI8Pa04xeIyC9JJ2M9OObgrDGvwQBiTjhBddGDVwTwZ6033a+WQyFaSeZJVrU2eh0t6og=
