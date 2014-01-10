@@ -18,4 +18,4 @@ echo "private key generated!"
 
 bundle exec cap production deploy
 
-rm ~/.ssh/credential.pem
+rm -rf ~/.ssh/credential.pem
