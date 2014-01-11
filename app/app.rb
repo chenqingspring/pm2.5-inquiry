@@ -47,7 +47,7 @@ def text_image_message(parsed_json)
   result = []
   result << {
       :title => "查询城市:#{parsed_json.last['area']}",
-      :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n污染等级:#{parsed_json.last['quality']}\n发布时间:#{@time}",
+      :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n\n污染等级:#{parsed_json.last['quality']}\n\n发布时间:#{@time}",
       :picture_url => 'http://image.zcool.com.cn/2013/06/38/61/m_1361793427683.jpg',
       :url => "#{SETTINGS['production_url']}/zones/#{URI.encode(params[:Content])}"
   }
