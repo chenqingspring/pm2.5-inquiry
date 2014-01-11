@@ -6,6 +6,8 @@ require 'date'
 
 require_relative '../lib/env'
 require_relative '../lib/pm25_data'
+require_relative '../lib/time_helper'
+require_relative '../lib/message_builder'
 require_relative '../controller/controller'
 
 on_text do
@@ -19,9 +21,8 @@ on_text do
     Pm25Data.new( :name => params[:Content],
                   :city_data => parsed_json
     ).save
-
-    time_format(parsed_json.last['time_point'])
-    text_image_message(parsed_json)
+    TimeHelper.time_format(parsed_json.last['time_point'])
+    MessageBuilder.text_image_message(parsed_json)
 end
 
 on_subscribe do
@@ -30,27 +31,4 @@ end
 
 on_unsubscribe do
   '欢迎您再次订阅！'
-end
-
-
-def time_format(time_string)
-  time_info = DateTime.parse(time_string)
-  year = time_info.year
-  month = time_info.month
-  day = time_info.day
-  hour = time_info.hour
-  min = time_info.min
-  @time = "#{year}年#{month}月#{day}日#{hour}时#{min}分"
-end
-
-def text_image_message(parsed_json)
-  result = []
-  picture_url = (parsed_json.last['pm2_5'].to_i <= 100 ? 'http://www.baikce.cn/upload/apk/2013/11/19/528b4b6adb36f.jpg'
-  : 'http://image.zcool.com.cn/2013/06/38/61/m_1361793427683.jpg')
-  result << {
-      :title => "查询城市:#{parsed_json.last['area']}",
-      :description => "        pm2.5平均值:#{parsed_json.last['pm2_5']}\n\n污染等级:#{parsed_json.last['quality']}\n\n发布时间:#{@time}",
-      :picture_url => picture_url,
-      :url => "#{SETTINGS['production_url']}/zones/#{URI.encode(params[:Content])}"
-  }
 end

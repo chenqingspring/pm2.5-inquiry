@@ -1,9 +1,6 @@
 get '/zones/:city' do
   city_info = Pm25Data.where(:name => params[:city]).all.last
-
   city_data = (city_info.nil? ? (HTTParty.get(URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:city]}&token=#{SETTINGS['token']}".strip).to_s)).parsed_response : city_info.city_data)
-
-
   city_data.delete(city_data.last)
 
   title = "#{city_data.last['area']}各地区pm2.5指数如下:"
