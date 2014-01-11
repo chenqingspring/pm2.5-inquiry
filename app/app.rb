@@ -24,7 +24,7 @@ on_text do
     text_image_message(parsed_json)
 end
 on_subscribe do
-  '欢迎订阅！请发送城市名称(北京)或拼音(beijing)或区号(010)进行查询！'
+  "欢迎订阅!\n请发送城市名称(北京)或拼音(beijing)或区号(010)进行查询!"
 end
 
 on_unsubscribe do
