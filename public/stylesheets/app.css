@@ -45,3 +45,9 @@ table {
     background-color: #f255a2;
     border-color: #eb678b
 }
+
+.city-title {
+    font-family: initial,serif;
+    font-weight: bolder;
+    font-size: large;
+}
