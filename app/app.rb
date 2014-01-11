@@ -18,9 +18,14 @@ on_text do
       return "抱歉！#{parsed_json['error']}，我们会尽快提供！"
     end
 
-    Pm25Data.new( :name => params[:Content],
-                  :city_data => parsed_json
-    ).save
+    last_city_info = Pm25Data.where(:name => params[:Content]).all.last
+
+    if last_city_info.nil? || parsed_json.last['time_point'] != last_city_info.city_data.last['time_point']
+      Pm25Data.new( :name => params[:Content],
+                    :city_data => parsed_json
+      ).save
+    end
+
     TimeHelper.time_format(parsed_json.last['time_point'])
     MessageBuilder.text_image_message(parsed_json)
 end
