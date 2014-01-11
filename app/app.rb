@@ -45,7 +45,7 @@ end
 
 def text_image_message(parsed_json)
   result = []
-  picture_url = (parsed_json.last['pm2_5'].to_i <= 100 ? 'http://img.jrjimg.cn/2013/12/20131226151316226.png'
+  picture_url = (parsed_json.last['pm2_5'].to_i <= 100 ? 'http://www.baikce.cn/upload/apk/2013/11/19/528b4b6adb36f.jpg'
   : 'http://image.zcool.com.cn/2013/06/38/61/m_1361793427683.jpg')
   result << {
       :title => "查询城市:#{parsed_json.last['area']}",
