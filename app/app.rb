@@ -12,13 +12,13 @@ on_text do
     url = URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}".strip).to_s
     parsed_json = (HTTParty.get(url)).parsed_response
 
-    Pm25Data.new( :name => params[:Content],
-                  :city_data => parsed_json
-    ).save
-
     if parsed_json.is_a?(Hash) && !parsed_json['error'].nil?
       return "抱歉！#{parsed_json['error']}，我们会尽快提供！"
     end
+
+    Pm25Data.new( :name => params[:Content],
+                  :city_data => parsed_json
+    ).save
 
     time_format(parsed_json.last['time_point'])
     text_image_message(parsed_json)
