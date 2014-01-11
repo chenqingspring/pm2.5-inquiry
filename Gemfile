@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'sinatra'
 gem 'wei-backend'
 gem 'httparty'
+gem 'mongo_mapper'
 
 group :development do
   gem 'shotgun', '~> 0.9'
