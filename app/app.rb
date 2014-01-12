@@ -26,8 +26,8 @@ on_text do
       ).save
     end
 
-    TimeHelper.time_format(parsed_json.last['time_point'])
-    MessageBuilder.text_image_message(parsed_json)
+    update_time = TimeHelper.time_format(parsed_json.last['time_point'])
+    MessageBuilder.text_image_message(parsed_json, update_time)
 end
 
 on_subscribe do
