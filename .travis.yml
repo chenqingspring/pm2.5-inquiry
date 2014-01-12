@@ -5,6 +5,9 @@ rvm:
 
 after_script: ./deploy.sh
 
+services:
+  - mongodb
+
 env:
   global:
   - secure: SkOYUTwua5VDLAumMcVaXlgqBF9ozG1kbLqjLbm/ytcD/G8a3Uiji4rfAWIKeF9L4OJR+Nl7kX//rwPxeSwIcg9QI4druHylm66RP0xEDPEOruLSclAG+PVE6Ymf0Ls0DIrivvTD2od5llnGxl+qKqnlOz67+RpZCF3kM8gWwq0=
