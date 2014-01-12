@@ -1,7 +1,7 @@
 module MessageBuilder
   def self.text_image_message(last_average_data, update_time)
     result = []
-    picture_url = select_image(last_average_data)
+    picture_url = select_image
     city_name = last_average_data['area']
     result << {
         :title => "查询城市:#{city_name}",
@@ -12,7 +12,7 @@ module MessageBuilder
   end
 
   private
-  def self.select_image(last_average_data)
-    last_average_data['pm2_5'].to_i <= 100 ? SETTINGS['image_src_1'] : SETTINGS['image_src_2']
+  def self.select_image
+    SETTINGS['image_src'][rand(SETTINGS['image_src'].length)]
   end
 end

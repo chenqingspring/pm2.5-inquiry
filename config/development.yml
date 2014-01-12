@@ -1,5 +1,6 @@
 pm25_query_url: 'http://www.pm25.in/api/querys/pm2_5.json'
 token: 'RQCxTwiUMjhhcL4k3S3a'
 app_url: 'http://54.199.131.70'
-image_src_1: 'http://www.baikce.cn/upload/apk/2013/11/19/528b4b6adb36f.jpg'
-image_src_2: 'http://image.zcool.com.cn/2013/06/38/61/m_1361793427683.jpg'
+image_src:
+  - 'http://www.baikce.cn/upload/apk/2013/11/19/528b4b6adb36f.jpg'
+  - 'http://image.zcool.com.cn/2013/06/38/61/m_1361793427683.jpg'
