@@ -8,11 +8,11 @@ require_relative '../lib/env'
 require_relative '../lib/pm25_data'
 require_relative '../lib/time_helper'
 require_relative '../lib/message_builder'
+require_relative '../lib/pm25_api_helper'
 require_relative '../controller/controller'
 
 on_text do
-    url = URI.encode("#{SETTINGS['pm25_query_url']}?city=#{params[:Content]}&token=#{SETTINGS['token']}".strip).to_s
-    parsed_json = (HTTParty.get(url)).parsed_response
+    parsed_json = Pm25ApiHelper.update_city_info(params[:Content])
 
     if parsed_json.is_a?(Hash) && !parsed_json['error'].nil?
       return "抱歉！#{parsed_json['error']}，我们会尽快提供！"
@@ -27,7 +27,7 @@ on_text do
     end
 
     update_time = TimeHelper.time_format(parsed_json.last['time_point'])
-    MessageBuilder.text_image_message(parsed_json, update_time)
+    MessageBuilder.text_image_message(parsed_json.last, update_time)
 end
 
 on_subscribe do
