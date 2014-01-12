@@ -11,6 +11,7 @@ module MessageBuilder
     }
   end
 
+  private
   def self.select_image(last_average_data)
     last_average_data['pm2_5'].to_i <= 100 ? SETTINGS['image_src_1'] : SETTINGS['image_src_2']
   end
