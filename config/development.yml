@@ -1,4 +1,4 @@
-pm25_query_url: 'http://www.pm25.in/api/querys/pm2_5.json'
+pm25_query_url: 'http://www.pm25.in/api/querys/aqi_details.json'
 token: 'RQCxTwiUMjhhcL4k3S3a'
 app_url: 'http://54.199.131.70'
 image_src:
