@@ -60,15 +60,19 @@ p.footer-text {
 }
 
 .position-name {
+    margin-right: 5%;
+}
+
+.container-right {
     display: inline;
-    margin-right: 3%;
+    float: right;
+    width: 37%;
 }
 
 .pm25-value {
-    display: inline;
-    margin-right: 3%;
+    font-weight: bold;
 }
 
 .quality {
-    display: inline;
+    float: right;
 }
