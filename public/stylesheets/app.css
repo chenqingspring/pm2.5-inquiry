@@ -51,3 +51,10 @@ table {
     font-weight: bolder;
     font-size: large;
 }
+
+p.footer-text {
+    text-align: right;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: gray;
+}

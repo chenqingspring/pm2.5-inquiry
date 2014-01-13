@@ -1,5 +1,7 @@
 require './app/app.rb'
 
+use Rack::Reloader
+
 ENV['RACK_ENV'] ||= development
 
 root_dir = File.dirname(__FILE__)
