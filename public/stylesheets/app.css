@@ -58,3 +58,17 @@ p.footer-text {
     font-weight: bold;
     color: gray;
 }
+
+.position-name {
+    display: inline;
+    margin-right: 3%;
+}
+
+.pm25-value {
+    display: inline;
+    margin-right: 3%;
+}
+
+.quality {
+    display: inline;
+}

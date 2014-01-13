@@ -1,15 +1,4 @@
-require 'sinatra'
-require 'wei-backend'
-require 'httparty'
-require 'uri'
-require 'date'
-
 require_relative '../lib/env'
-require_relative '../lib/pm25_data'
-require_relative '../lib/time_helper'
-require_relative '../lib/message_builder'
-require_relative '../lib/pm25_api_helper'
-require_relative '../controller/controller'
 
 on_text do
     parsed_json = Pm25ApiHelper.update_city_info(params[:Content])
