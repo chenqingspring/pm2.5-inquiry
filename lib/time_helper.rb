@@ -6,6 +6,6 @@ module TimeHelper
     day = time_info.day
     hour = time_info.hour
     min = time_info.min
-    "#{year}年#{month}月#{day}日#{hour}时#{min}分"
+    "#{year}-#{month}-#{day} #{hour}:#{min}"
   end
 end
