@@ -7,6 +7,7 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    atomic (1.1.14)
     bson (1.9.2)
     bson_ext (1.9.2)
       bson (~> 1.9.2)
@@ -56,6 +57,8 @@ GEM
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
+    rufus-scheduler (3.0.3)
+      tzinfo
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.4)
@@ -68,8 +71,12 @@ GEM
       term-ansicolor
     term-ansicolor (1.2.2)
       tins (~> 0.8)
+    thread_safe (0.1.3)
+      atomic
     tilt (1.4.1)
     tins (0.13.1)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
     wei-backend (0.0.5)
       haml (~> 4.0.4)
       json (~> 1.8)
@@ -87,6 +94,7 @@ DEPENDENCIES
   mongo_mapper
   rack-test
   rspec
+  rufus-scheduler
   shotgun (~> 0.9)
   sinatra
   wei-backend
