@@ -20,26 +20,26 @@
 
 .little-polluted {
     color: #74623C;
-    background-color: #f0b35f;
+    background-color: #f0b778;
     border-color: #e9c9a5
 }
 
 
 .medium-polluted {
     color: #773D3A;
-    background-color: #f7826b;
+    background-color: #f7807e;
     border-color: #f1a19e
 }
 
 .highly-polluted {
     color: #6E3665;
-    background-color: #fc74ea;
+    background-color: #fc7fee;
     border-color: #fa9cf7
 }
 
 .heavy-polluted {
-    color: #744b65;
-    background-color: #f2469d;
+    color: #744358;
+    background-color: #f255a2;
     border-color: #eb678b
 }
 
@@ -83,12 +83,10 @@ button.btn.btn-danger.btn-lg {
     float: right;
 }
 
-#bottom .alert,
 #top .alert {
     margin-bottom: 5px
 }
 
-#bottom,
 #top {
     padding: 1.2em;
 }
