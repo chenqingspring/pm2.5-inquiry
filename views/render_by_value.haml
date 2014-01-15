@@ -1,5 +1,5 @@
 - value = pm2_5.to_int
-- template = Haml::Engine.new('/var/www/pm2.5-inquiry/current/views/details.haml')
+- template = Haml::Engine.new(File.read('/var/www/pm2.5-inquiry/current/views/details.haml'))
 - if value <= 50
   %div.alert.awesome
     = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '优')
