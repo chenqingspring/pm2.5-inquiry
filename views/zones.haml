@@ -3,10 +3,26 @@
     %h4.city-title
       = title
     - zones.each do |zone|
-      - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/render_by_value.haml'))
-      = template.render(Object.new, :pm2_5 => zone[:pm2_5], :position => zone[:position_name])
-    - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/top-last-button.haml'))
-    = template.render(Object.new)
+      - value = zone[:pm2_5].to_int
+      - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/details.haml'))
+      - if value <= 50
+        %div.alert.awesome
+          = template.render(Object.new, :pm25 => zone[:pm2_5], :position => zone[:position_name], :quality => '优')
+      - elsif value > 50 && value <=100
+        %div.alert.good
+          = template.render(Object.new, :pm25 => zone[:pm2_5], :position => zone[:position_name], :quality => '良')
+      - elsif value > 100 && value <=150
+        %div.alert.little-polluted
+          = template.render(Object.new, :pm25 => zone[:pm2_5], :position => zone[:position_name], :quality => '轻度污染')
+      - elsif value > 150 && value <= 200
+        %div.alert.medium-polluted
+          = template.render(Object.new, :pm25 => zone[:pm2_5], :position => zone[:position_name], :quality => '中度污染')
+      - elsif value > 200 && value <= 300
+        %div.alert.highly-polluted
+          = template.render(Object.new, :pm25 => zone[:pm2_5], :position => zone[:position_name], :quality => '重度污染')
+      - elsif value > 300
+        %div.alert.heavy-polluted
+          = template.render(Object.new, :pm25 => zone[:pm2_5], :position => zone[:position_name], :quality => '严重污染')
     %p.footer-text
       = '微信订阅号#pm2.5查询#'
     %p.footer-text

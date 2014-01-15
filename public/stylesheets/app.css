@@ -1,3 +1,6 @@
+table {
+    width: 100%;
+}
 #zones {
     padding: 1.2em;
 }
@@ -73,21 +76,3 @@ p.footer-text {
 .quality {
     float: right;
 }
-
-button.btn.btn-success.btn-lg {
-    width: 49%;
-}
-
-button.btn.btn-danger.btn-lg {
-    width: 49%;
-    float: right;
-}
-
-#top .alert {
-    margin-bottom: 5px
-}
-
-#top {
-    padding: 1.2em;
-}
-
