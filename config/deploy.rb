@@ -6,7 +6,7 @@ set :repo_url, 'https://github.com/chenqingspring/pm2.5-inquiry.git'
 set :deploy_to, '/var/www/pm2.5-inquiry'
 
 # set :format, :pretty
-# set :log_level, :debug
+set :log_level, :debug
 set :pty, true
 
 # set :linked_files, %w{config/database.yml}
