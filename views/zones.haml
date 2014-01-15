@@ -3,10 +3,10 @@
     %h4.city-title
       = title
     - zones.each do |zone|
-      - template = Haml::Engine.new(File.read('/var/www/pm2.5-inquiry/current/views/render_by_value.haml'))
+      - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/render_by_value.haml'))
       = template.render(Object.new, :pm2_5 => zone[:pm2_5], :position => zone[:position_name])
-    - template = Haml::Engine.new(File.read('/var/www/pm2.5-inquiry/current/views/top-last-button.haml'))
-    = template.render(Object.new, :pm2_5 => zone[:pm2_5], :position => zone[:position_name])
+    - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/top-last-button.haml'))
+    = template.render(Object.new)
     %p.footer-text
       = '微信订阅号#pm2.5查询#'
     %p.footer-text
