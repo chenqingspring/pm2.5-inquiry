@@ -1,19 +1,20 @@
 - value = pm2_5.to_int
+- template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/views/details.haml'))
 - if value <= 50
   %div.alert.awesome
-    = haml :details, :locals => { :pm2_5 => pm2_5, :position => position, :quality => '优' }
+    = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '优')
 - elsif value > 50 && value <=100
   %div.alert.good
-    = haml :details, :locals => { :pm2_5 => pm2_5, :position => position, :quality => '良' }
+    = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '良')
 - elsif value > 100 && value <=150
   %div.alert.little-polluted
-    = haml :details, :locals => { :pm2_5 => pm2_5, :position => position, :quality => '轻度污染' }
+    = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '轻度污染')
 - elsif value > 150 && value <= 200
   %div.alert.medium-polluted
-    = haml :details, :locals => { :pm2_5 => pm2_5, :position => position, :quality => '中度污染' }
+    = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '中度污染')
 - elsif value > 200 && value <= 300
   %div.alert.highly-polluted
-    = haml :details, :locals => { :pm2_5 => pm2_5, :position => position, :quality => '重度污染' }
+    = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '重度污染')
 - elsif value > 300
   %div.alert.heavy-polluted
-    = haml :details, :locals => { :pm2_5 => pm2_5, :position => position, :quality => '严重污染' }
+    = template.render(Object.new, :pm2_5 => pm2_5, :position => position, :quality => '严重污染')

@@ -1,7 +1,6 @@
 require './app/app.rb'
 
 use Rack::Reloader
-use Rack::CommonLogger
 
 ENV['RACK_ENV'] ||= development
 
