@@ -3,7 +3,7 @@ get '/zones/:city' do
   city_data = (city_info.nil? ? Pm25ApiHelper.update_city_info(params[:city]) : city_info.city_data)
   city_data.delete(city_data.last)
 
-  title = "#{city_data.last['area']}各地区pm2.5指数如下:"
+  title = "#{city_data.last['area']}各监测点pm2.5指数如下:"
   results=[]
   city_data.each do |zone|
     results << {
