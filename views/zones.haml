@@ -3,8 +3,7 @@
     %h4.city-title
       = title
     - zones.each do |zone|
-      - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/render_by_value.haml'))
-      = template.render(Object.new, :pm2_5 => zone[:pm2_5], :position => zone[:position_name])
+      = haml :render_by_value, :locals => { :pm2_5 => zone[:pm2_5], :position => zone[:position_name] }
     - template = Haml::Engine.new(File.read(File.dirname(__FILE__) + '/top-last-button.haml'))
     = template.render(Object.new)
     %p.footer-text
