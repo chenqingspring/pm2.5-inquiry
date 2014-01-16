@@ -93,10 +93,10 @@ button.btn.btn-danger.btn-lg {
     padding: 1.2em;
 }
 
-#bottom .btn-primary {
+#bottom button.btn.btn-primary.btn-lg {
     width: 100%;
 }
 
-#top .btn-info {
+#top button.btn.btn-info.btn-lg {
     width: 100%;
 }
