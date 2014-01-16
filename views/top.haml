@@ -4,9 +4,8 @@
       ='今日全国pm2.5十佳城市'
     - cities.each do |city|
       = haml :render_by_value, :locals => { :pm2_5 => city[:pm2_5], :position => "#{cities.index(city)+1}.#{city[:area]}" }
-    %p.footer-text
-      = '微信订阅号#pm2.5查询#'
-    %p.footer-text
-      = '数据来源 PM25.in'
-
+    %button.btn.btn-info.btn-lg
+      %span.glyphicon.glyphicon-thumbs-down
+        ='10差城市'
+    = haml :footer
 

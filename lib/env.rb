@@ -22,7 +22,7 @@ SETTINGS = YAML.load_file "./config/#{ENV['RACK_ENV']}.yml"
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '10s' do
+scheduler.every '1h' do
   city_ranking_info = Pm25ApiHelper.city_ranking
   if city_ranking_info.length > 20
     Pm25Data.new( :name => 'city_ranking',

@@ -5,11 +5,7 @@
     - zones.each do |zone|
       = haml :render_by_value, :locals => { :pm2_5 => zone[:pm2_5], :position => zone[:position_name] }
     = haml :top_last_button
-    %p.footer-text
-      = '微信订阅号#pm2.5查询#'
-    %p.footer-text
-      = '数据来源 PM25.in'
-
+    = haml :footer
 
 
 

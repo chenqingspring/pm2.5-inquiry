@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $(".btn-success").bind('click',function(){
+    $('.btn-success, .btn-primary').bind('click',function(){
         window.location.href = "/top10";
-    })
+    });
 
-    $(".btn-danger").bind('click',function(){
+    $('.btn-danger,.btn-info').bind('click',function(){
         window.location.href = "/bottom10";
-    })
+    });
 });
