@@ -20,9 +20,9 @@ MongoMapper.database = "pm25-inquiry"
 
 SETTINGS = YAML.load_file "./config/#{ENV['RACK_ENV']}.yml"
 
-scheduler = Rufus::Scheduler.new
+SCHEDULER = Rufus::Scheduler.new
 
-scheduler.every '20s', :first_in => 0 do
+SCHEDULER.every '20s' do
   city_ranking_info = Pm25ApiHelper.city_ranking
   if city_ranking_info.length > 20
     Pm25Data.new( :name => 'city_ranking',
@@ -30,3 +30,5 @@ scheduler.every '20s', :first_in => 0 do
     ).save
   end
 end
+
+SCHEDULER.join
