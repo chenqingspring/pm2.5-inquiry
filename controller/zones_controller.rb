@@ -15,5 +15,7 @@ get '/zones/:city' do
 
   results.sort! {|x,y| y[:pm2_5].to_i <=> x[:pm2_5].to_i }
 
-  haml :zones, :locals => { :zones =>results, :title =>title }
+  update_time = TimeHelper.time_format(city_data.first['time_point'])
+
+  haml :zones, :locals => { :zones =>results, :title =>title, :time => update_time }
 end

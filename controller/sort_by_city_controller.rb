@@ -29,8 +29,6 @@ get '/bottom10' do
 
   results.sort! {|x,y| y[:pm2_5].to_i <=> x[:pm2_5].to_i }
 
-  p results.first.to_s
-
   update_time = TimeHelper.time_format(city_ranking.first['time_point'])
 
   haml :bottom, :locals => { :cities =>results, :time => update_time }

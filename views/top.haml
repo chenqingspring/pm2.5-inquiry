@@ -7,7 +7,4 @@
     %button.btn.btn-info.btn-lg
       %span.glyphicon.glyphicon-thumbs-down
         ='10差城市'
-    = haml :footer
-    %p.footer-text
-      = "更新时间: #{time}"
-
+    = haml :footer, :locals => { :time => time }
