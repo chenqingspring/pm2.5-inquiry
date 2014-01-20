@@ -1,5 +1,13 @@
 get '/top10' do
 
+  city_ranking_info = Pm25ApiHelper.city_ranking
+  city_ranking = Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
+  if city_ranking_info.length > 20 && city_ranking_info.first['time_point'] != city_ranking.first['time_point']
+    Pm25Data.new( :name => 'city_ranking',
+                  :city_ranking => city_ranking_info
+    ).save
+  end
+
   city_ranking = Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
 
   results=[]
@@ -18,6 +26,14 @@ get '/top10' do
 end
 
 get '/bottom10' do
+
+  city_ranking_info = Pm25ApiHelper.city_ranking
+  city_ranking = Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
+  if city_ranking_info.length > 20 && city_ranking_info.first['time_point'] != city_ranking.first['time_point']
+    Pm25Data.new( :name => 'city_ranking',
+                  :city_ranking => city_ranking_info
+    ).save
+  end
 
   city_ranking = Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
 
