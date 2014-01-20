@@ -5,6 +5,7 @@ require 'haml'
 require 'sinatra'
 require 'httparty'
 require 'wei-backend'
+require 'rufus-scheduler'
 require "mongo_mapper"
 require 'rufus-scheduler'
 require_relative 'pm25_data'

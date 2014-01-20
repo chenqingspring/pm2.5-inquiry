@@ -1,6 +1,5 @@
 ENV['RACK_ENV'] ||= 'development'
 
-require 'rufus-scheduler'
 require_relative '../lib/env'
 
 scheduler = Rufus::Scheduler.new
