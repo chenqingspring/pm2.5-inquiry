@@ -13,6 +13,9 @@ chmod 400 ~/.ssh/credential.pem
 echo "private key generated!"
 
 echo "ready to deploy app to ec2...."
+
 bundle exec cap production deploy
+bundle exec cap update_city_ranking:stop
+bundle exec cap update_city_ranking:start
 
 rm -rf ~/.ssh/credential.pem

@@ -84,3 +84,15 @@ namespace :production do
   end
 
 end
+
+
+
+namespace :update_city_ranking do
+  task :start do
+    run "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
+  end
+
+  task :stop do
+    run "cd #{deploy_to}/current/update_city_ranking; cat update_city_ranking.pid | xargs kill -9"
+  end
+end

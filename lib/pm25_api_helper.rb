@@ -16,7 +16,6 @@ module Pm25ApiHelper
     Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
   end
 
-  private
   def self.city_ranking
     HTTParty.get(URI.encode("#{SETTINGS['aqi_ranking_url']}?token=#{SETTINGS['token']}".strip).to_s).parsed_response
   end
