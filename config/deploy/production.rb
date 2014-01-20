@@ -44,8 +44,10 @@ server '54.199.131.70', user: 'ec2-user', roles: [:app], ssh_options: {
 # fetch(:default_env).merge!(rails_env: :production)
 
 before 'deploy:check', 'production:change_directory_permission'
+before 'deploy:check',  'production:update_city_ranking_stop'
 after 'deploy:updated', 'production:check_configuration'
 after 'deploy', 'production:auto_start_apache'
+after 'deploy', 'production:update_city_ranking_start'
 
 namespace :deploy do
   task :restart do
@@ -79,20 +81,20 @@ namespace :production do
 
   task :auto_start_apache do
     on roles(:app) do
-      sudo '/sbin/chkconfig --level 2345 httpd on'
+      sudo "/sbin/chkconfig --level 2345 httpd on; cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
     end
   end
 
-end
 
-
-
-namespace :update_city_ranking do
-  task :start do
-    run "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
+  task :update_city_ranking_start do
+    on roles(:app) do
+      execute "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
+    end
   end
 
-  task :stop do
-    run "cd #{deploy_to}/current/update_city_ranking; cat update_city_ranking.pid | xargs kill -9"
+  task :update_city_ranking_stop do
+    on roles(:app) do
+      execute "cd #{deploy_to}/current/update_city_ranking; cat update_city_ranking.pid | xargs kill -9"
+    end
   end
 end
