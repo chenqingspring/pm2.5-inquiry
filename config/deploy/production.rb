@@ -51,6 +51,7 @@ namespace :deploy do
   task :restart do
     on roles(:app) do
       sudo '/etc/init.d/httpd restart'
+      sudo "ruby #{deploy_to}/current/script/refresh_city_ranking.rb"
     end
   end
 
