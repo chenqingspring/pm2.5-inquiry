@@ -100,3 +100,7 @@ button.btn.btn-danger.btn-lg {
 #top button.btn.btn-info.btn-lg {
     width: 100%;
 }
+
+#brand-text {
+    margin-top: 10px
+}
