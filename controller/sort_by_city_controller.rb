@@ -3,7 +3,6 @@ get '/top10' do
   results=[]
   city_ranking[0..9].each do |city|
     results << {
-        :aqi => city[:aqi],
         :area => city['area'],
         :pm2_5 => city['pm2_5'],
         :quality => city['quality']
@@ -12,7 +11,9 @@ get '/top10' do
 
   results.sort! {|x,y| x[:pm2_5].to_i <=> y[:pm2_5].to_i }
 
-  haml :top, :locals => { :cities =>results }
+  update_time = TimeHelper.time_format(city_ranking.first['time_point'])
+
+  haml :top, :locals => { :cities =>results, :time => update_time}
 end
 
 get '/bottom10' do
@@ -20,7 +21,6 @@ get '/bottom10' do
   results=[]
   city_ranking[city_ranking.length-11..city_ranking.length-1].each do |city|
     results << {
-        :aqi => city[:aqi],
         :area => city['area'],
         :pm2_5 => city['pm2_5'],
         :quality => city['quality']
@@ -29,5 +29,9 @@ get '/bottom10' do
 
   results.sort! {|x,y| y[:pm2_5].to_i <=> x[:pm2_5].to_i }
 
-  haml :bottom, :locals => { :cities =>results }
+  p results.first.to_s
+
+  update_time = TimeHelper.time_format(city_ranking.first['time_point'])
+
+  haml :bottom, :locals => { :cities =>results, :time => update_time }
 end
