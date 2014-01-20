@@ -6,6 +6,7 @@ gem 'httparty'
 gem 'mongo_mapper'
 gem 'bson_ext'
 gem 'rufus-scheduler'
+gem 'byebug'
 
 group :development do
   gem 'shotgun', '~> 0.9'
