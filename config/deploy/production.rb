@@ -46,8 +46,6 @@ server '54.199.131.70', user: 'ec2-user', roles: [:app], ssh_options: {
 before 'deploy:check', 'production:change_directory_permission'
 after 'deploy:updated', 'production:check_configuration'
 after 'deploy', 'production:auto_start_apache'
-before 'deploy',  'production:update_city_ranking_stop'
-after 'deploy', 'production:update_city_ranking_start'
 
 namespace :deploy do
   task :restart do
