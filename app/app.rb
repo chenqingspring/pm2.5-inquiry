@@ -4,7 +4,7 @@ on_text do
     parsed_json = Pm25ApiHelper.update_city_info(params[:Content])
 
     if parsed_json.is_a?(Hash) && !parsed_json['error'].nil?
-      return "抱歉！#{parsed_json['error']}，我们会尽快提供！"
+      return "抱歉！暂未提供该城市pm2.5数据！"
     end
 
     last_city_info = Pm25Data.where(:name => params[:Content]).all.last
