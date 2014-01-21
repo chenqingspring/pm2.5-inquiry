@@ -79,7 +79,7 @@ namespace :production do
 
   task :auto_start_apache do
     on roles(:app) do
-      sudo "/sbin/chkconfig --level 2345 httpd on; cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
+      sudo "/sbin/chkconfig --level 2345 httpd on"
     end
   end
 
