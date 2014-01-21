@@ -44,9 +44,9 @@ server '54.199.131.70', user: 'ec2-user', roles: [:app], ssh_options: {
 # fetch(:default_env).merge!(rails_env: :production)
 
 before 'deploy:check', 'production:change_directory_permission'
-before 'deploy:check',  'production:update_city_ranking_stop'
 after 'deploy:updated', 'production:check_configuration'
 after 'deploy', 'production:auto_start_apache'
+before 'deploy',  'production:update_city_ranking_stop'
 after 'deploy', 'production:update_city_ranking_start'
 
 namespace :deploy do
@@ -89,12 +89,14 @@ namespace :production do
   task :update_city_ranking_start do
     on roles(:app) do
       execute "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
+      execute "echo 'update city ranking started'"
     end
   end
 
   task :update_city_ranking_stop do
     on roles(:app) do
       execute "cd #{deploy_to}/current/update_city_ranking; cat update_city_ranking.pid | xargs kill -9"
+      execute "echo 'update city ranking stoped'"
     end
   end
 end
