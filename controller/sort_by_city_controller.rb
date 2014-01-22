@@ -19,7 +19,7 @@ end
 get '/bottom10' do
   city_ranking = Pm25ApiHelper.retrieve_city_ranking_data
   results=[]
-  city_ranking[city_ranking.length-11..city_ranking.length-1].each do |city|
+  city_ranking[city_ranking.length-10..city_ranking.length-1].each do |city|
     results << {
         :area => city['area'],
         :pm2_5 => city['pm2_5'],
