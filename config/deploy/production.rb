@@ -86,7 +86,7 @@ namespace :production do
 
   task :update_city_ranking_start do
     on roles(:app) do
-      execute "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid"
+      execute "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid &"
       execute "echo 'update city ranking started'"
     end
   end
