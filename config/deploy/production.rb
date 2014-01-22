@@ -82,16 +82,17 @@ namespace :production do
       sudo "/sbin/chkconfig --level 2345 httpd on"
     end
   end
+end
 
-
-  task :update_city_ranking_start do
+namespace :update_city_ranking do
+  task :start do
     on roles(:app) do
-      execute "cd #{deploy_to}/current/update_city_ranking; bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid &"
+      execute "cd #{deploy_to}/current/update_city_ranking; nohup bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid &"
       execute "echo 'update city ranking started'"
     end
   end
 
-  task :update_city_ranking_stop do
+  task :stop do
     on roles(:app) do
       execute "cd #{deploy_to}/current/update_city_ranking; cat update_city_ranking.pid | xargs kill -9"
       execute "echo 'update city ranking stoped'"
