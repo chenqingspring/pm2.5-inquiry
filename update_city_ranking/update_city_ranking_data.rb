@@ -16,6 +16,7 @@ scheduler.every '300s', :first_in => 0 do
     Pm25Data.new( :name => 'city_ranking',
                   :city_ranking => city_ranking_info
     ).save
+    puts 'ranking data saved'
   end
 end
 
