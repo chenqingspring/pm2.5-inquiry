@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'sinatra'
 require 'rufus-scheduler'
 require 'mongo_mapper'
 require 'httparty'
@@ -19,3 +18,5 @@ scheduler.every '300s', :first_in => 0 do
     ).save
   end
 end
+
+scheduler.join
