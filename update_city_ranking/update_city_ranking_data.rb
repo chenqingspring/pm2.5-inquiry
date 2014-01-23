@@ -10,7 +10,7 @@ MongoMapper.database = "pm25-inquiry"
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '300s', :first_in => 0 do
+scheduler.every '1h', :first_in => 0 do
   city_ranking_info = Pm25ApiHelper.city_ranking
   if city_ranking_info.length > 20
     Pm25Data.new( :name => 'city_ranking',
