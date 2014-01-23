@@ -87,15 +87,15 @@ end
 namespace :update_city_ranking do
   task :start do
     on roles(:app) do
-      execute "cd #{deploy_to}/current/update_city_ranking; sudo nohup bundle exec rackup -p 4567 -D -P ./update_city_ranking.pid &"
-      execute "echo 'update city ranking started'"
+      execute "cd #{deploy_to}/current/update_city_ranking; nohup rackup -p 4567 &"
+      execute "echo 'update city ranking scheduler started'"
     end
   end
 
   task :stop do
     on roles(:app) do
-      execute "cd #{deploy_to}/current/update_city_ranking; cat update_city_ranking.pid | xargs kill -9"
-      execute "echo 'update city ranking stoped'"
+      execute "cd #{deploy_to}/current/update_city_ranking; sh ./stop_scheduler.sh"
+      execute "echo 'update city ranking scheduler stopped'"
     end
   end
 end
