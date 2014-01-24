@@ -26,3 +26,5 @@ end
 on_unsubscribe do
   '欢迎您再次订阅！'
 end
+
+token 'chenqingspring'
