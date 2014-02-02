@@ -11,7 +11,7 @@ set :stage, :production
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '54.199.132.107', user: 'ec2-user', roles: [:app], ssh_options: {
+server '54.199.143.94', user: 'ec2-user', roles: [:app], ssh_options: {
     keys: [File.join(ENV["HOME"], '.ssh', 'credential.pem')]
 }
 
