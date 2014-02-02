@@ -8,6 +8,7 @@ set :deploy_to, '/var/www/pm2.5-inquiry'
 # set :format, :pretty
 # set :log_level, :debug
 set :pty, true
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
