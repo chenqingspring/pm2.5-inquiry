@@ -1,5 +1,5 @@
 get '/top10' do
-  city_ranking = Pm25ApiHelper.retrieve_city_ranking_data
+  city_ranking = Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
   results=[]
   city_ranking[0..9].each do |city|
     results << {
@@ -17,7 +17,7 @@ get '/top10' do
 end
 
 get '/bottom10' do
-  city_ranking = Pm25ApiHelper.retrieve_city_ranking_data
+  city_ranking = Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
   results=[]
   city_ranking[city_ranking.length-10..city_ranking.length-1].each do |city|
     results << {
