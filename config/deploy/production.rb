@@ -5,17 +5,13 @@ set :stage, :production
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-#role :app, %w{54.199.131.70}
-#role :web, %w{54.199.131.70}
-#role :db,  %w{54.199.131.70}
-
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '54.199.131.70', user: 'ec2-user', roles: [:app], ssh_options: {
+server '54.199.132.107', user: 'ec2-user', roles: [:app], ssh_options: {
     keys: [File.join(ENV["HOME"], '.ssh', 'credential.pem')]
 }
 
