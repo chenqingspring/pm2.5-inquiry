@@ -9,8 +9,6 @@ get '/top10' do
     } unless city['pm2_5'].to_int == 0 || city['aqi'].to_int == 0
   end
 
-  results.sort! {|x,y| x[:pm2_5].to_i <=> y[:pm2_5].to_i }
-
   update_time = TimeHelper.time_format(city_ranking.first['time_point'])
 
   haml :top, :locals => { :cities =>results, :time => update_time}
@@ -27,7 +25,7 @@ get '/bottom10' do
     } unless city['pm2_5'].to_int == 0 || city['aqi'].to_int == 0
   end
 
-  results.sort! {|x,y| y[:pm2_5].to_i <=> x[:pm2_5].to_i }
+  results.reverse!
 
   update_time = TimeHelper.time_format(city_ranking.first['time_point'])
 

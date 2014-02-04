@@ -1,6 +1,5 @@
 get '/zones/:city' do
-  city_info = Pm25Data.where(:name => params[:city]).all.last
-  city_data = (city_info.nil? ? Pm25ApiHelper.update_city_info(params[:city]) : city_info.city_data)
+  city_data = Pm25ApiHelper.update_city_info(params[:city])
   city_data.delete(city_data.last)
 
   title = "#{city_data.last['area']}各监测点pm2.5指数如下:"

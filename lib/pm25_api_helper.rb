@@ -10,7 +10,7 @@ module Pm25ApiHelper
                    :city_ranking => city_ranking_info
       ).save
     end
-    Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking]
+    Pm25Data.where(:name => 'city_ranking').all.last[:city_ranking].sort! {|x,y| x['pm2_5'].to_i <=> y['pm2_5'].to_i}
   end
 
   def self.city_ranking
