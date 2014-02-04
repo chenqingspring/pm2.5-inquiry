@@ -126,20 +126,3 @@ body.loading {
 body.loading .modal {
     display: block;
 }
-
-div.adv.alert {
-    color: #ffffff;
-    background-color:  #5cb85c;
-    border-color: #4cae4c;
-    display: inline;
-    float: right;
-}
-
-.heavy-polluted {
-    display: inline-block;
-    width: 70%;
-}
-
-.heavy-polluted .container-right {
-    width: 50%;
-}
