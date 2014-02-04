@@ -17,4 +17,14 @@ module Pm25ApiHelper
     HTTParty.get(URI.encode("#{SETTINGS['aqi_ranking_url']}?token=#{SETTINGS['token']}".strip).to_s).parsed_response
   end
 
+  def self.top10_cities
+    cities = retrieve_city_ranking_data
+    cities[0..9]
+  end
+
+  def self.bottom10_cities
+    cities = retrieve_city_ranking_data
+    cities[cities.length-10..cities.length-1].reverse
+  end
+
 end
