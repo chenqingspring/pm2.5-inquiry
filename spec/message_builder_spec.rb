@@ -26,7 +26,7 @@ describe 'message builder' do
     result = MessageBuilder.text_image_message(@fake_last_average_data, @fake_update_time)[0]
 
     result[:title].should == '查询城市:西安'
-    result[:description].should == "        空气质量指数(aqi): 103\n\npm2.5平均值: 77\n\npm10平均值: 100\n\n主要污染: 颗粒物(PM2.5)\n\n污染等级: 轻度污染\n\n发布时间: 2014-01-12 19:02"
+    result[:description].should == "        空气质量指数(AQI): 103\n\npm2.5平均值: 77\n\npm10平均值: 100\n\n主要污染: 颗粒物(PM2.5)\n\n污染等级: 轻度污染\n\n发布时间: 2014-01-12 19:02"
     result[:picture_url].should == 'http://selected_image_url'
     result[:url].should == 'http://localhost:9393/zones/%E8%A5%BF%E5%AE%89'
   end
