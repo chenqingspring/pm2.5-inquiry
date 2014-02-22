@@ -5,6 +5,7 @@ require 'haml'
 require 'sinatra'
 require 'httparty'
 #require 'wei-backend'
+require_relative 'wechat-backend'
 require 'rufus-scheduler'
 require "mongo_mapper"
 require_relative 'pm25_data'
