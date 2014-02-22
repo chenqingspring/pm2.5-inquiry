@@ -28,6 +28,6 @@ get '/' do
   end
   update_time = TimeHelper.time_format(sorted_cities.first['time_point'])
 
-  haml :bottom10, :locals => { :cities =>results, :time => update_time}
+  haml :index, :locals => { :cities =>results, :time => update_time}
 
 end
