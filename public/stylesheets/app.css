@@ -131,3 +131,9 @@ body.loading .modal {
 #index .col-lg-6 {
     width: 100%;
 }
+
+img.qrcode {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
