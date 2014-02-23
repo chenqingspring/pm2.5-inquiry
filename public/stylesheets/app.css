@@ -129,7 +129,9 @@ body.loading .modal {
 }
 
 #index .col-lg-6,
-#zones .col-lg-6 {
+#zones .col-lg-6,
+#top .col-lg-6,
+#bottom .col-lg-6{
     width: 100%;
     margin-bottom: 5px;
 }
