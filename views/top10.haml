@@ -4,6 +4,7 @@
       ='今日全国pm2.5十佳城市'
     - cities.each do |city|
       = haml :render_by_value, :locals => { :pm2_5 => city[:pm2_5], :position => "#{cities.index(city)+1}.#{city[:area]}" }
+      = haml :search_box
     %button.btn.btn-info.btn-lg
       %span.glyphicon.glyphicon-thumbs-down
         ='10差城市'

@@ -1,13 +1,7 @@
 #index
   %h4
     ="请输入城市名称查询PM2.5指数："
-  .row
-    .col-lg-6
-      .input-group
-        %input.form-control{:type => 'text', :placeholder => '西安'}
-        %span.input-group-btn
-          %button.btn.btn-default{:type => 'button'}
-            ='Go!'
+  =haml :search_box
   .pollution-level
     %table.table.table-bordered
       %thead

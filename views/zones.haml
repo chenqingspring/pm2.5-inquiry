@@ -4,6 +4,7 @@
       = title
     - zones.each do |zone|
       = haml :render_by_value, :locals => { :pm2_5 => zone[:pm2_5], :position => zone[:position_name] }
+    = haml :search_box
     = haml :top_last_button
     = haml :footer, :locals => { :time => time }
 

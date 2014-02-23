@@ -128,8 +128,10 @@ body.loading .modal {
     display: block;
 }
 
-#index .col-lg-6 {
+#index .col-lg-6,
+#zones .col-lg-6 {
     width: 100%;
+    margin-bottom: 5px;
 }
 
 img.qrcode {
