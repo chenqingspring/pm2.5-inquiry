@@ -1,5 +1,10 @@
 get '/zones/:city' do
   city_data = Pm25ApiHelper.update_city_info(params[:city])
+
+  if city_data.is_a?(Hash) && !city_data['error'].nil?
+    return haml :zones, :locals => { :zones =>{}, :title =>"抱歉！暂未提供该城市pm2.5数据！", :time => DateTime.now.strftime("%Y-%m-%d %H:%M")  }
+  end
+
   city_data.delete(city_data.last)
 
   title = "#{city_data.last['area']}各监测点pm2.5指数如下:"
