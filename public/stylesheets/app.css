@@ -127,3 +127,7 @@ body.loading {
 body.loading .modal {
     display: block;
 }
+
+#index .col-lg-6 {
+    width: 100%;
+}

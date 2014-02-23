@@ -4,7 +4,7 @@
   .row
     .col-lg-6
       .input-group
-        %input.form-control{:type => 'text', :placeholder => '北京'}
+        %input.form-control{:type => 'text', :placeholder => '西安'}
         %span.input-group-btn
           %button.btn.btn-default{:type => 'button'}
             ='Go!'
@@ -66,3 +66,13 @@
       ='PM2.5简介:'
     %p
       ='细颗粒物又称细粒、细颗粒、PM2.5。细颗粒物指环境空气中空气动力学当量直径小于等于 2.5 微米的颗粒物。它能较长时间悬浮于空气中，其在空气中含量浓度越高，就代表空气污染越严重。虽然PM2.5只是地球大气成分中含量很少的组分，但它对空气质量和能见度等有重要的影响。与较粗的大气颗粒物相比，PM2.5粒径小，面积大，活性强，易附带有毒、有害物质（例如，重金属、微生物等），且在大气中的停留时间长、输送距离远，因而对人体健康和大气环境质量的影响更大。'
+
+  %p.footer-text#brand-text
+    = '微信订阅号#pm2.5查询#'
+  %p.footer-text
+    = '数据来源 PM25.in'
+  %div.modal
+
+  %script{:type => 'text/javascript', :src  => '/javascripts/jquery-2.0.3.min.js'}
+  %script{:type => 'text/javascript', :src  => '/javascripts/app.js'}
+  %script{:type => 'text/javascript', :src  => '/javascripts/google-analytics.js'}

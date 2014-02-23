@@ -8,4 +8,10 @@ $(document).ready(function(){
         window.location.href = "/sort/bottom10";
         $("body").addClass("loading");
     });
+
+    $('button.btn.btn-default').bind('click',function(){
+        cityName = encodeURI($('input.form-control').val());
+        window.location.href = "/zones/" + cityName;
+        $("body").addClass("loading");
+    });
 });
