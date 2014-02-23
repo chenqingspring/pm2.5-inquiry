@@ -1,17 +1,20 @@
 $('button.btn.btn-default').bind('click',function(){
-    cityName = encodeURI($('input.form-control').val());
-    window.location.href = "/zones/" + cityName;
-    $("body").addClass("loading");
+    searchByName()
 });
 
 $('body').keyup(function(event){
-    var code = event.keyCode || event.which,
-        cityName = encodeURI($('input.form-control').val());
+    var code = event.keyCode || event.which;
+
     if(code == 13) {
-        if (!cityName){
-            cityName = 'xian'
-        }
-        window.location.href = "/zones/" + cityName;
-        $("body").addClass("loading");
+        searchByName();
     }
 });
+
+function searchByName() {
+    var cityName = encodeURI($('input.form-control').val());
+    if (!cityName) {
+        cityName = 'xian'
+    }
+    window.location.href = "/zones/" + cityName;
+    $("body").addClass("loading");
+}
