@@ -9,21 +9,4 @@ $(document).ready(function(){
         $("body").addClass("loading");
     });
 
-    $('button.btn.btn-default').bind('click',function(){
-        cityName = encodeURI($('input.form-control').val());
-        window.location.href = "/zones/" + cityName;
-        $("body").addClass("loading");
-    });
-
-    $('body').keyup(function(event){
-        var code = event.keyCode || event.which;
-        if(code == 13) {
-            cityName = encodeURI($('input.form-control').val());
-            window.location.href = "/zones/" + cityName;
-            $("body").addClass("loading");
-        }
-    });
-
-
-
 });
