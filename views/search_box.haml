@@ -1,3 +1,56 @@
+.pollution-level
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th
+          ='PM2.5指数'
+        %th
+          ='等级'
+        %th
+          ='注意事项'
+    %tbody.table-striped
+      %tr.awesome
+        %td
+          ='0-50'
+        %td
+          ='优'
+        %td
+          ='参加户外活动呼吸清新空气'
+      %tr.good
+        %td
+          ='50-100'
+        %td
+          ='良'
+        %td
+          ='可以正常进行室外活动'
+      %tr.little-polluted
+        %td
+          ='101-150'
+        %td
+          ='轻度'
+        %td
+          ='敏感人群减少体力消耗大的户外活动'
+      %tr.medium-polluted
+        %td
+          ='151-200'
+        %td
+          ='中度'
+        %td
+          ='对敏感人群影响较大'
+      %tr.highly-polluted
+        %td
+          ='201-300'
+        %td
+          ='重度'
+        %td
+          ='所有人应适当减少室外活动'
+      %tr.heavy-polluted
+        %td
+          ='>300'
+        %td
+          ='严重'
+        %td
+          ='尽量不要留在室外'
 .row
   .col-lg-6
     .input-group
