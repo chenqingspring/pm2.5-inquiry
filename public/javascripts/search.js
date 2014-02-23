@@ -2,7 +2,7 @@ $('button.btn.btn-default').bind('click',function(){
     searchByName()
 });
 
-$('body').keyup(function(event){
+$('body').keypress(function(event){
     var code = event.keyCode || event.which;
 
     if(code == 13) {
