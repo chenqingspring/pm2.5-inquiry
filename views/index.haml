@@ -1,12 +1,68 @@
-#bottom
-  %tbody
-    %h4.top-title
-      ='今日全国pm2.5十差城市'
-    - cities.each do |city|
-      = haml :render_by_value, :locals => { :pm2_5 => city[:pm2_5], :position => "#{cities.index(city)+1}.#{city[:area]}" }
-    %button.btn.btn-primary.btn-lg
-      %span.glyphicon.glyphicon-thumbs-up
-        ='10佳城市'
-    %div
-      ='UPDATE: This post is the old way of setting up AdSense with DFP. I no longer recommend this approach because the old limitation of styling and adding AdSense Custom channels no longer exist. You can follow this guide if you want but the new method is easier.Read: How to set up Google AdSense using DFP Small Business build in AdSense option You only need to follow this approach if you want to run Split Tests for specific Ad Units.Create a new Order and name it like "YourWebsite - Google AdSense" hackday is started at 13th Feb, every team have a free pitch time, to introduce the project and hire volunteers. after they know our project is about a remote control robot, everyone was exciting and crazy (we have photo to be attached) Finally, we got 6 members in melbourne team.REA 正在向中国的用户提供澳洲(意大利等)的房源，从而将业务推向国际化。 作为中国用户，我在网站上看到一个澳洲的房源，但是飞到国外去看一下这个房子，再决定买不买，可能成本有点高？  但是如果不看，只凭借agent的口头介绍，我又觉得不是很踏实，怎么办呢？在这次Hackday中，我们使用Dora完成“在线看房”的点子。除此之外，也许也能用在一些危险环境的探测或者帮助家长了解小孩的动态。例如在幼儿园，家长控制Dora移动到小孩面前，可以同小孩对话，能看到小孩的视频等等。这就有点扯远了。结果，在那天LBS时，经过一番热烈的讨论，大家都对这个点子非常感兴趣。当天就为这个项目起好了名字X-Robot，并定义了基本的业务场景。WebRTC（Web Real-Time Communication）由一套开放的标准、协议和一组JavaScript API构成。2010年，谷歌收购了VoIP软件开发商GIPS(Global IP Solutions)，并获得了视频采集、编解码、网络传输、回音消除等RTC相关技术。2011年6月，谷歌开放了该部分源码，并积极推动该项技术，这奠定了RTC在Web领域发展的基础。WebRTC使浏览器之间能够通过点对点的通信方式，直接完成视频、音频以及数据的实时传输。同时，WebRTC容许开发人员通过调用浏览器支持的API，使用HTML5标签和JavaScript轻松的实现基于Web的音频、视频应用。目前，WebRTC的标准还在不断完善中，W3C、IETF和其他一些浏览器厂商正在积极的推动WebRTC的发展。WebRTC开创了浏览器之间能够直接通信并完成视频或者音频传输的新时代。对于构建开放的、标准的，无插件，免费的视频音频通信应用，迈出了划时代的一步。Page Object是Selenium中提出的一种测试设计模式。在Web前端自动化测试的过程中，Page Object可以称得上是居家必备的良品之一。PageObject将与Web测试页面交互的行为封装在其内部，旨在将每个页面或者相似页面的功能封装，例如页面中需要测试的元素（按钮，输入框，标题等），这样，通过在测试中访问Page类的相应方法来获取页面相应的元素，从而巧妙的避免了当页面元素id或者位置变化时，需要修改测试代码的情况。'
-    = haml :footer, :locals => { :time => time }
+#index
+  %h4
+    ="请输入城市名称查询PM2.5指数："
+  .row
+    .col-lg-6
+      .input-group
+        %input.form-control{:type => 'text', :placeholder => '北京'}
+        %span.input-group-btn
+          %button.btn.btn-default{:type => 'button'}
+            ='Go!'
+  .pollution-level
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th
+            ='PM2.5指数'
+          %th
+            ='等级'
+          %th
+            ='注意事项'
+      %tbody.table-striped
+        %tr.awesome
+          %td
+            ='0-50'
+          %td
+            ='优'
+          %td
+            ='参加户外活动呼吸清新空气'
+        %tr.good
+          %td
+            ='50-100'
+          %td
+            ='良'
+          %td
+            ='可以正常进行室外活动'
+        %tr.little-polluted
+          %td
+            ='101-150'
+          %td
+            ='轻度'
+          %td
+            ='敏感人群减少体力消耗大的户外活动'
+        %tr.medium-polluted
+          %td
+            ='151-200'
+          %td
+            ='中度'
+          %td
+            ='对敏感人群影响较大'
+        %tr.highly-polluted
+          %td
+            ='201-300'
+          %td
+            ='重度'
+          %td
+            ='所有人应适当减少室外活动'
+        %tr.heavy-polluted
+          %td
+            ='>300'
+          %td
+            ='严重'
+          %td
+            ='尽量不要留在室外'
+  %div.highlight
+    %h4
+      ='PM2.5简介:'
+    %p
+      ='细颗粒物又称细粒、细颗粒、PM2.5。细颗粒物指环境空气中空气动力学当量直径小于等于 2.5 微米的颗粒物。它能较长时间悬浮于空气中，其在空气中含量浓度越高，就代表空气污染越严重。虽然PM2.5只是地球大气成分中含量很少的组分，但它对空气质量和能见度等有重要的影响。与较粗的大气颗粒物相比，PM2.5粒径小，面积大，活性强，易附带有毒、有害物质（例如，重金属、微生物等），且在大气中的停留时间长、输送距离远，因而对人体健康和大气环境质量的影响更大。'
