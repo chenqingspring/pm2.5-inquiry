@@ -141,3 +141,19 @@ img.qrcode {
     margin-left: auto;
     margin-right: auto
 }
+
+#index h4,
+#index h5 {
+    font-weight: bolder;
+}
+
+.para {
+    color: #333;
+    margin-bottom: 5px;
+    text-indent: 2em;
+    line-height: 24px;
+}
+
+.temp-text {
+    display: none;
+}
