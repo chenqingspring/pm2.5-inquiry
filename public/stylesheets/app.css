@@ -133,7 +133,7 @@ body.loading .modal {
 #top .col-lg-6,
 #bottom .col-lg-6{
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 img.qrcode {
