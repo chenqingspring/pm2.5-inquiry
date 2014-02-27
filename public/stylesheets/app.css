@@ -154,6 +154,10 @@ img.qrcode {
     line-height: 24px;
 }
 
+body {
+    background-color: #fafafa !important;
+}
+
 .temp-text {
     display: none;
 }
