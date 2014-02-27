@@ -158,6 +158,15 @@ body {
     background-color: #fafafa !important;
 }
 
+.home {
+    float:right;
+    margin-bottom: 20px;
+}
+.home a {
+    position: relative;
+    right: 10px;
+}
+
 .temp-text {
     display: none;
 }
