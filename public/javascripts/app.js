@@ -9,4 +9,8 @@ $(document).ready(function(){
         $("body").addClass("loading");
     });
 
+    $('.home a').bind('click', function(){
+        $("body").addClass("loading");
+    });
+
 });
