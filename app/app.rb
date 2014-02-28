@@ -3,7 +3,7 @@ require_relative '../lib/env'
 on_text do
     parsed_json = Pm25ApiHelper.update_city_info(params[:Content])
 
-    if parsed_json.is_a?(Hash) && !parsed_json['error'].nil?
+    if parsed_json.is_a?(Hash) && !parsed_json['error'].nil? || parsed_json.length == 0
       return "抱歉！暂未提供该城市pm2.5数据！"
     end
 
