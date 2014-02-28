@@ -14,7 +14,11 @@ module Pm25ApiHelper
   end
 
   def self.city_ranking
-    HttpClient.get(URI.encode("#{SETTINGS['aqi_ranking_url']}?token=#{SETTINGS['token']}".strip).to_s).parsed_response
+    begin
+      HttpClient.get(URI.encode("#{SETTINGS['aqi_ranking_url']}?token=#{SETTINGS['token']}".strip).to_s).parsed_response
+    rescue
+      return {}
+    end
   end
 
   def self.top10_cities
