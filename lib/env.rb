@@ -10,6 +10,7 @@ require "mongo_mapper"
 require_relative 'pm25_data'
 require_relative 'time_helper'
 require_relative 'message_builder'
+require_relative 'http_client'
 require_relative 'pm25_api_helper'
 require_relative '../controller/index_controller'
 require_relative '../controller/zones_controller'
