@@ -1,5 +1,5 @@
-#source 'http://ruby.taobao.org'
-source 'http://rubygems.org'
+source 'http://ruby.taobao.org'
+#source 'http://rubygems.org'
 gem 'sinatra'
 gem 'wei-backend'
 gem 'httparty'
@@ -18,4 +18,3 @@ group :test do
   gem 'rspec'
   gem 'rack-test'
 end
-
