@@ -101,7 +101,7 @@ namespace :db do
   task :dump_db do
     on roles (:app) do
       execute "echo 'upload dumped mongodb to s3'"
-      exec "ruby #{deploy_to}/current/db_upload.rb"
+      execute "ruby #{deploy_to}/current/db_upload.rb"
     end
   end
 end
