@@ -4,7 +4,7 @@ require 'rubygems'
 require 'aws-sdk'
 
 bucket_name = 'pm25-inquiry-db'
-file_name = 'mongodump.tar.gz'
+file_name = "mongodump#{ENV['TRAVIS_BUILD_NUMBER']}.tar.gz"
 system 'mongodump'
 system "tar czvf #{file_name} dump"
 
