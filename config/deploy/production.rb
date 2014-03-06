@@ -42,6 +42,7 @@ server 'pm25-inquiry.info', user: 'ec2-user', roles: [:app], ssh_options: {
 before 'deploy:check', 'production:change_directory_permission'
 after 'deploy:updated', 'production:check_configuration'
 after 'deploy', 'production:auto_start_apache'
+after 'production:auto_start_apache', 'db:dump_db'
 
 namespace :deploy do
   task :restart do

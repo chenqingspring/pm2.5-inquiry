@@ -14,9 +14,5 @@ chmod 400 ~/.ssh/credential.pem
 echo "private key generated!"
 
 echo "ready to deploy app to ec2...."
-＃bundle exec cap production deploy
-
-echo "save dumped mongo to s3"
-bundle exec cap production db:dump_db
-
+bundle exec cap production deploy
 rm -rf ~/.ssh/credential.pem
