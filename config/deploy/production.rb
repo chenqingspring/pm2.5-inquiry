@@ -101,7 +101,7 @@ namespace :db do
   task :dump_db do
     on roles (:app) do
       execute "echo 'upload dumped mongodb to s3'"
-      execute "ruby #{deploy_to}/current/db_upload.rb"
+      execute "AWS_ACCESS_KEY_ID=#{ENV['AWS_ACCESS_KEY_ID']} AWS_SECRET_ACCESS_KEY=#{ENV['AWS_SECRET_ACCESS_KEY']} ruby #{deploy_to}/current/db_upload.rb"
     end
   end
 end
