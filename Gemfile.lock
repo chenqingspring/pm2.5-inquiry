@@ -1,5 +1,5 @@
 GEM
-  remote: http://ruby.taobao.org/
+  remote: http://rubygems.org/
   specs:
     activemodel (3.2.16)
       activesupport (= 3.2.16)
