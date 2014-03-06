@@ -41,8 +41,8 @@ server 'pm25-inquiry.info', user: 'ec2-user', roles: [:app], ssh_options: {
 
 before 'deploy:check', 'production:change_directory_permission'
 after 'deploy:updated', 'production:check_configuration'
-after 'deploy', 'production:auto_start_apache'
-after 'production:auto_start_apache', 'db:dump_db'
+after 'deploy:finished', 'production:auto_start_apache'
+after 'deploy', 'db:dump_db'
 
 namespace :deploy do
   task :restart do
@@ -101,7 +101,7 @@ namespace :db do
   task :dump_db do
     on roles (:app) do
       execute "echo 'upload dumped mongodb to s3'"
-      execute 'ruby db_upload.rb'
+      exec "ruby #{deploy_to}/current/db_upload.rb"
     end
   end
 end
