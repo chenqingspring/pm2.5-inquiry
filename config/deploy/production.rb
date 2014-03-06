@@ -95,3 +95,12 @@ namespace :update_city_ranking do
     end
   end
 end
+
+namespace :db do
+  task :dump_db do
+    on roles (:app) do
+      execute "echo 'upload dumped mongodb to s3'"
+      execute 'ruby db_upload.rb'
+    end
+  end
+end

@@ -8,6 +8,10 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     atomic (1.1.14)
+    aws-sdk (1.35.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bson (1.9.2)
     bson_ext (1.9.2)
       bson (~> 1.9.2)
@@ -80,6 +84,7 @@ GEM
     tins (0.13.1)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
+    uuidtools (2.1.4)
     wei-backend (0.1.1)
       haml (~> 4.0.4)
       json (~> 1.8)
@@ -90,6 +95,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   bson_ext
   capistrano (~> 3.0.1)
   capistrano-bundler
