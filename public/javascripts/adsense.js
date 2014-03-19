@@ -12,6 +12,6 @@
     ad.setAttribute('data-ad-slot','9049332797');
     ad.setAttribute('data-ad-format','auto');
     var footer = $(".modal");
-    footer.append(ad)
+    footer.after(ad)
     (adsbygoogle = window.adsbygoogle || []).push({});
 })();
