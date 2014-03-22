@@ -1,4 +1,2 @@
-$(document).ready(function(){
-    var cityName = encodeURI($('.redirect').attr('data-src'));
-    window.location.href = "/zones/" + cityName;
-});
+var cityName = encodeURI(document.getElementById('redirect').getAttribute('data-src'));
+window.location.href = "/zones/" + cityName;
