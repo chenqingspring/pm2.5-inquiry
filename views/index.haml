@@ -1,11 +1,6 @@
 %title
   ='微信订阅号#pm2.5查询#'
 %body
-  %p.activity-info
-    %a#post-user.activity-meta{:href => 'javascript:viewProfile()', :style=>"float:right;display:inline;margin-right:20px;margin-bottom:10px;"}
-      %span.text-ellipsis
-        ='pm2.5查询'
-      %i.icon_link_arrow
   #index
     =haml :search_box
     %div.highlight
@@ -102,4 +97,3 @@
     %script{:type => 'text/javascript', :src  => '/javascripts/search.js'}
     %script{:type => 'text/javascript', :src  => '/javascripts/app.js'}
     %script{:type => 'text/javascript', :src  => '/javascripts/google-analytics.js'}
-    %script{:type => 'text/javascript', :src  => '/javascripts/wechat.js'}
