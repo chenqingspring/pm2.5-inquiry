@@ -5,9 +5,6 @@
     %tbody
       %h4.city-title
         = title
-      %a#post-user.activity-meta{:href => "javascript:viewProfile()",:style=>'float: right; display: inline;'}
-        %span.text-ellipsis
-          ='pm2.5查询'
       - zones.each do |zone|
         = haml :render_by_value, :locals => { :pm2_5 => zone[:pm2_5], :position => zone[:position_name] }
       = haml :search_box
