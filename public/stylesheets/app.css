@@ -166,6 +166,8 @@ body {
 .home a {
     position: relative;
     right: 10px;
+    font-size: large;
+    font-weight: 500;
 }
 
 .center {
