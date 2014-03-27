@@ -19,6 +19,12 @@ on_text do
     MessageBuilder.text_image_message(parsed_json.last, update_time)
 end
 
+on_location do
+  "You location:\n\t lat: #{params[:Location_X]} \n\t long: #{params[:Location_Y]} \n\t label: #{params[:Label]}
+  \n\t Scale: #{params[:Scale]}"
+end
+
+
 on_subscribe do
   "欢迎订阅!请发送城市名称(北京)或拼音(beijing)进行查询!"
 end
