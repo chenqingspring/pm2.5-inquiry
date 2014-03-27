@@ -1,5 +1,6 @@
 pm25_query_url: 'http://www.pm25.in/api/querys/aqi_details.json'
 aqi_ranking_url: 'http://www.pm25.in/api/querys/aqi_ranking.json'
+geo_coder_url: 'http://api.map.baidu.com/geocoder'
 token: 'RQCxTwiUMjhhcL4k3S3a'
 app_url: 'http://www.pm25-inquiry.info/'
 image_src:
