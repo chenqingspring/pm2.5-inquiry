@@ -14,7 +14,7 @@ on_location do
   geo_city_name = JSON.parse(geo_coder_result)['result']['addressComponent']['city']
   /(.*)市/.match(geo_city_name)
   if $1.nil?
-    parsed_json = parsed_json_builder params[:Label]
+    parsed_json = parsed_json_builder geo_city_name
   else
     parsed_json = parsed_json_builder $1
   end
