@@ -59,4 +59,15 @@ module Pm25ApiHelper
     cities[cities.length-10..cities.length-1].reverse
   end
 
+  def self.parsed_json_builder city_name
+    parsed_json = update_city_info(city_name)
+    last_city_info = Pm25Data.where(:name => city_name).all.last
+    if parsed_json.is_a?(Array) && (last_city_info.nil? || parsed_json.last['time_point'] != last_city_info.city_data.last['time_point'])
+      Pm25Data.new( :name => city_name,
+                    :city_data => parsed_json
+      ).save
+    end
+    parsed_json
+  end
+
 end
