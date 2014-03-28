@@ -1,5 +1,5 @@
 require_relative '../lib/geo_code_helper'
-require_relative '../spec/spec_helper'
+require_relative '../spec/supports/spec_helper'
 
 describe 'geo code helper' do
   it 'should return 北京 when get response with city name 北京市' do
@@ -7,7 +7,7 @@ describe 'geo code helper' do
       GEO_CODE_JSON_RESPONSE_BEIJING
     }
 
-    city_name = Pm25Inquiry::GeoCodeHelper.geo_code_parser("123","321")
+    city_name = Pm25Inquiry::GeoCodeHelper.geo_code_parser('123', '321')
     city_name.should == '北京'
   end
 
@@ -16,7 +16,7 @@ describe 'geo code helper' do
       GEO_CODE_JSON_RESPONSE_HHHT
     }
 
-    city_name = Pm25Inquiry::GeoCodeHelper.geo_code_parser("123","321")
+    city_name = Pm25Inquiry::GeoCodeHelper.geo_code_parser('123', '321')
     city_name.should == '呼和浩特'
   end
 

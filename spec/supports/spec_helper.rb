@@ -1,9 +1,7 @@
 ENV['RACK_ENV'] ||= 'test'
 
-require 'rack/test'
-require 'rack'
 require 'rspec'
-require_relative '../lib/env'
+require 'env'
 
 GEO_CODE_JSON_RESPONSE_BEIJING = '{
     "status":"OK",
@@ -54,7 +52,7 @@ INVALID_CITY_NAME_MESSAGE = '<xml>
      <MsgId>1234567890123456</MsgId>
     </xml>'
 
-VALID_CITY_NAME_MESSAGE_XIAN = '<xml>
+VALID_CITY_NAME_MESSAGE = '<xml>
      <ToUserName><![CDATA[toUser]]></ToUserName>
      <FromUserName><![CDATA[fromUser]]></FromUserName>
      <CreateTime>1348831860</CreateTime>
@@ -75,3 +73,52 @@ LOCATION_MESSAGE = '<xml>
 	 <Label><![CDATA[位置信息]]></Label>
 	 <MsgId>1234567890123456</MsgId>
 	</xml>'
+
+
+FAKE_PARSED_JSON_XIAN_FROM_API = [
+    {'aqi'=>460,
+     'area'=>'西安',
+     'co'=>2.169,
+     'co_24h'=>2.257,
+     'no2'=>63,
+     'no2_24h'=>49,
+     'o3'=>24,
+     'o3_24h'=>56,
+     'o3_8h'=>24,
+     'o3_8h_24h'=>56,
+     'pm10'=>560,
+     'pm10_24h'=>268,
+     'pm2_5'=>84,
+     'pm2_5_24h'=>68,
+     'position_name'=>'高压开关厂',
+     'primary_pollutant'=>'颗粒物(PM10)',
+     'quality'=>'严重污染',
+     'so2'=>27,
+     'so2_24h'=>28,
+     'station_code'=>'1462A',
+     'time_point'=>'2014-03-28T19:00:00Z'}
+]
+
+FAKE_PARSED_JSON_GZ_FROM_API = [
+    {'aqi'=>460,
+     'area'=>'广州',
+     'co'=>2.169,
+     'co_24h'=>2.257,
+     'no2'=>63,
+     'no2_24h'=>49,
+     'o3'=>24,
+     'o3_24h'=>56,
+     'o3_8h'=>24,
+     'o3_8h_24h'=>56,
+     'pm10'=>560,
+     'pm10_24h'=>268,
+     'pm2_5'=>84,
+     'pm2_5_24h'=>68,
+     'position_name'=>'监测点',
+     'primary_pollutant'=>'颗粒物(PM10)',
+     'quality'=>'严重污染',
+     'so2'=>27,
+     'so2_24h'=>28,
+     'station_code'=>'1462A',
+     'time_point'=>'2014-03-28T19:00:00Z'}
+]

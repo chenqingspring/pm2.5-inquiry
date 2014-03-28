@@ -1,5 +1,5 @@
 require_relative '../lib/message_builder'
-require_relative 'spec_helper'
+require_relative 'supports/spec_helper'
 
 describe 'message builder' do
   before(:each) do
