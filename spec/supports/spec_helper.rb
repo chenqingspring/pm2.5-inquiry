@@ -61,6 +61,15 @@ VALID_CITY_NAME_MESSAGE = '<xml>
      <MsgId>1234567890123456</MsgId>
     </xml>'
 
+INVALID_CITY_NAME_WITH_WHITE_SPACE_MESSAGE = '<xml>
+     <ToUserName><![CDATA[toUser]]></ToUserName>
+     <FromUserName><![CDATA[fromUser]]></FromUserName>
+     <CreateTime>1348831860</CreateTime>
+     <MsgType><![CDATA[text]]></MsgType>
+     <Content><![CDATA[ 西安 ]]></Content>
+     <MsgId>1234567890123456</MsgId>
+    </xml>'
+
 
 LOCATION_MESSAGE = '<xml>
 	 <ToUserName><![CDATA[toUser]]></ToUserName>
