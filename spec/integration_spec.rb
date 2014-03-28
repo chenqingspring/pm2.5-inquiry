@@ -15,7 +15,6 @@ describe 'integration test with 3rd party APIs' do
 
     post '/weixin?signature=3b3d0829a84ba658a1ed72c9f90740e1ff88c797&timestamp=1388674716&nonce=1388564676', VALID_CITY_NAME_MESSAGE, 'CONTENT_TYPE' => 'text/xml'
 
-
     last_response.body.should include '<ToUserName><![CDATA[fromUser]]></ToUserName>'
     last_response.body.should include '<Title><![CDATA[查询城市:西安]]></Title>'
     last_response.body.should include '<Url><![CDATA[http://localhost:9393/redirect/%E8%A5%BF%E5%AE%89]]></Url>'

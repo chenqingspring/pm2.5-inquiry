@@ -57,7 +57,7 @@ VALID_CITY_NAME_MESSAGE = '<xml>
      <FromUserName><![CDATA[fromUser]]></FromUserName>
      <CreateTime>1348831860</CreateTime>
      <MsgType><![CDATA[text]]></MsgType>
-     <Content><![CDATA[xian]]></Content>
+     <Content><![CDATA[西安]]></Content>
      <MsgId>1234567890123456</MsgId>
     </xml>'
 
