@@ -85,7 +85,7 @@ GEM
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
     uuidtools (2.1.4)
-    wei-backend (0.1.3)
+    wei-backend (0.1.1)
       haml (~> 4.0.4)
       json (~> 1.8)
       nokogiri (~> 1.6.0)
@@ -107,4 +107,4 @@ DEPENDENCIES
   rufus-scheduler
   shotgun (~> 0.9)
   sinatra
-  wei-backend
+  wei-backend (= 0.1.1)
