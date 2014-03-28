@@ -8,11 +8,11 @@ module Pm25ApiHelper
   end
 
   def self.retrieve_city_ranking_data
-    latest_city_ranking_date = Pm25Data.where(:name => 'city_ranking').all.last
+    latest_city_ranking_last = Pm25Data.where(:name => 'city_ranking').all.last
 
-    if latest_city_ranking_date.nil?
+    if latest_city_ranking_last.nil?
       city_ranking_info = city_ranking
-      if city_ranking_info.length > 20
+      if city_ranking_info.length > 20 && !city_ranking_info.first["aqi"].nil?
         Pm25Data.new(:name => 'city_ranking',
                      :city_ranking => city_ranking_info
         ).save
@@ -20,12 +20,12 @@ module Pm25ApiHelper
       end
     end
 
-    latest_city_ranking = latest_city_ranking_date[:city_ranking]
+    latest_city_ranking = latest_city_ranking_last[:city_ranking]
     latest_time_info = DateTime.parse(latest_city_ranking.first['time_point'])
     current_time = DateTime.current
     if  update_city_ranking_data?(current_time, latest_time_info)
       city_ranking_info = city_ranking
-      if city_ranking_info.length > 20
+      if city_ranking_info.length > 20 && !city_ranking_info.first["aqi"].nil?
         Pm25Data.new(:name => 'city_ranking',
                      :city_ranking => city_ranking_info
         ).save

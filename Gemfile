@@ -1,7 +1,7 @@
 #source 'http://ruby.taobao.org'
 source 'http://rubygems.org'
 gem 'sinatra'
-gem 'wei-backend', '0.1.1'
+gem 'wei-backend', '0.1.4'
 gem 'httparty'
 gem 'mongo_mapper'
 gem 'bson_ext'
