@@ -90,8 +90,5 @@
       = '数据来源 PM25.in'
     %div.modal
 
-    %script{:type => 'text/javascript', :src  => '/javascripts/jquery-2.0.3.min.js'}
-    %script{:type => 'text/javascript', :src  => '/javascripts/search.js'}
-    %script{:type => 'text/javascript', :src  => '/javascripts/app.js'}
-    %script{:type => 'text/javascript', :src  => '/javascripts/google-analytics.js'}
+    %script{:type => 'text/javascript','data-main' => '/javascripts/main', :src  => '/javascripts/require.js'}
     = haml :adsense
