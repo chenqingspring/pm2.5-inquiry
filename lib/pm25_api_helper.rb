@@ -8,31 +8,8 @@ module Pm25ApiHelper
   end
 
   def self.retrieve_city_ranking_data
-    latest_city_ranking_last = Pm25Data.where(:name => 'city_ranking').all.last
-
-    if latest_city_ranking_last.nil?
       city_ranking_info = city_ranking
-      if city_ranking_info.length > 20 && !city_ranking_info.first["aqi"].nil?
-        Pm25Data.new(:name => 'city_ranking',
-                     :city_ranking => city_ranking_info
-        ).save
-        return city_ranking_info.to_a.sort! {|x,y| x['pm2_5'].to_i <=> y['pm2_5'].to_i}
-      end
-    end
-
-    latest_city_ranking = latest_city_ranking_last[:city_ranking]
-    latest_time_info = DateTime.parse(latest_city_ranking.first['time_point'])
-    current_time = DateTime.current
-    if  update_city_ranking_data?(current_time, latest_time_info)
-      city_ranking_info = city_ranking
-      if city_ranking_info.length > 20 && !city_ranking_info.first["aqi"].nil?
-        Pm25Data.new(:name => 'city_ranking',
-                     :city_ranking => city_ranking_info
-        ).save
-        return city_ranking_info.to_a.sort! {|x,y| x['pm2_5'].to_i <=> y['pm2_5'].to_i}
-      end
-    end
-    latest_city_ranking.sort! {|x,y| x['pm2_5'].to_i <=> y['pm2_5'].to_i}
+      city_ranking_info.to_a.sort! {|x,y| x['pm2_5'].to_i <=> y['pm2_5'].to_i}
   end
 
   def self.update_city_ranking_data?(current_time, latest_time_info)
@@ -60,14 +37,7 @@ module Pm25ApiHelper
   end
 
   def self.parsed_json_builder city_name
-    parsed_json = update_city_info(city_name)
-    last_city_info = Pm25Data.where(:name => city_name).all.last
-    if parsed_json.is_a?(Array) && (last_city_info.nil? || parsed_json.last['time_point'] != last_city_info.city_data.last['time_point'])
-      Pm25Data.new( :name => city_name,
-                    :city_data => parsed_json
-      ).save
-    end
-    parsed_json
+    update_city_info(city_name)
   end
 
 end
