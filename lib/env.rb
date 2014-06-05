@@ -6,7 +6,6 @@ require 'sinatra'
 require 'httparty'
 require 'wei-backend'
 require 'rufus-scheduler'
-require "mongo_mapper"
 require_relative 'pm25_data'
 require_relative 'time_helper'
 require_relative 'message_builder'
