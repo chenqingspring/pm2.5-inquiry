@@ -1,12 +1,9 @@
-#source 'http://ruby.taobao.org'
 ruby '2.0.0'
 source 'http://rubygems.org'
 group :production do
   gem 'sinatra'
   gem 'wei-backend', '0.1.4'
   gem 'httparty'
-  gem 'mongo_mapper'
-  gem 'bson_ext'
   gem 'rufus-scheduler'
 end
 
