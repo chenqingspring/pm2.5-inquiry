@@ -1,6 +1,4 @@
 require 'rubygems'
 require 'rufus-scheduler'
-require 'mongo_mapper'
 require 'httparty'
-require '../lib/pm25_data'
 require '../lib/pm25_api_helper'
