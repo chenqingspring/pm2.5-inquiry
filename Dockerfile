@@ -13,4 +13,4 @@ RUN bundle install --jobs 20 --retry 5 -V
 
 COPY . /opt/pm25
 
-CMD bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rackup config.ru -p 3000
+CMD bundle exec rackup config.ru -p 3000
