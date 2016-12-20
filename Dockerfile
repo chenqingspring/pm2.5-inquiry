@@ -4,7 +4,6 @@ RUN mkdir -p /opt/pm25
 
 WORKDIR /opt/pm25
 
-RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 RUN gem install bundler -V
 
 COPY Gemfile /opt/pm25/Gemfile
