@@ -12,5 +12,5 @@ RUN bundle install --jobs 20 --retry 5 -V
 
 COPY . /opt/pm25
 
-ENV RAILS_ENV=docker
+ENV RACK_ENV=production
 CMD bundle exec rackup config.ru -p 3000
