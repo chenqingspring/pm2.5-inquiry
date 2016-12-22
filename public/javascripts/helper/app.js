@@ -16,16 +16,19 @@ $(document).ready(function(){
     });
 
 
-    var appId = 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz';
-    var appKey = 'y73IcLAkxJznpDxczxmA9sak';
-    var analytics = AV.analytics({
-        appId: appId,
-        appKey: appKey,
-        version: '1.8.6',
-        channel: 'weixin'
-    }).send([], function(result) {
-        if (result) {
-            console.log('统计数据发送成功！');
-        }
-    });
+    if ('AV' in window) {
+        var appId = 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz';
+        var appKey = 'y73IcLAkxJznpDxczxmA9sak';
+
+        var analytics = AV.analytics({
+            appId: appId,
+            appKey: appKey,
+            version: '1.8.6',
+            channel: 'weixin'
+        }).send([], function(result) {
+            if (result) {
+                console.log('统计数据发送成功！');
+            }
+        });
+    }
 });

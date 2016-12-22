@@ -1,3 +1,12 @@
+function searchByName() {
+    var cityName = encodeURI($('input.form-control').val());
+    if (!cityName) {
+        cityName = 'xian'
+    }
+    window.location.href = "/zones/" + cityName;
+    $("body").addClass("loading");
+}
+
 $('button.btn.btn-default').bind('click',function(){
     searchByName()
 });
@@ -10,11 +19,3 @@ $('body').keypress(function(event){
     }
 });
 
-function searchByName() {
-    var cityName = encodeURI($('input.form-control').val());
-    if (!cityName) {
-        cityName = 'xian'
-    }
-    window.location.href = "/zones/" + cityName;
-    $("body").addClass("loading");
-}
