@@ -15,16 +15,17 @@ $(document).ready(function(){
         $("body").addClass("loading");
     });
 
-    // 应用 ID，用来识别应用
-    var APP_ID = 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz';
 
-    // 应用 Key，用来校验权限（Web 端可以配置安全域名来保护数据安全）
-    var APP_KEY = 'y73IcLAkxJznpDxczxmA9sak';
-
-    // 初始化
-    AV.init({
-        appId: APP_ID,
-        appKey: APP_KEY
+    var appId = 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz';
+    var appKey = 'y73IcLAkxJznpDxczxmA9sak';
+    var analytics = AV.analytics({
+        appId: appId,
+        appKey: appKey,
+        version: '1.8.6',
+        channel: 'weixin'
+    }).send([], function(result) {
+        if (result) {
+            console.log('统计数据发送成功！');
+        }
     });
-
 });
