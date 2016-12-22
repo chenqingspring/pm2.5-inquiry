@@ -14,21 +14,4 @@ $(document).ready(function(){
     $('.home a').bind('click', function(){
         $("body").addClass("loading");
     });
-
-
-    if ('AV' in window) {
-        var appId = 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz';
-        var appKey = 'y73IcLAkxJznpDxczxmA9sak';
-
-        var analytics = AV.analytics({
-            appId: appId,
-            appKey: appKey,
-            version: '1.8.6',
-            channel: 'weixin'
-        }).send([], function(result) {
-            if (result) {
-                console.log('统计数据发送成功！');
-            }
-        });
-    }
 });
