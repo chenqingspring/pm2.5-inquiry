@@ -1,29 +1,12 @@
 language: ruby
 rvm:
 - 2.0.0
-env:
-  global:
-  - secure: U0QXe1gm7L74Jj6Q5bXZuW9/jG151tFciUTqj0JoehLLkCtFHHcuBr8XlQnXItDFiRgKwVjt8htsm40BjcH/N2IOiRYflag6giG+aOg7XJJvGo+IX8umzk41QTxel1Uz3vssGj4zDqOrrcJkKoFFHcqhU11VCV0PAmK93J9pj9I=
-  - secure: YAEDyoFvNQs+jcOWkPcanoFV0+oaAYya2yILopIVsp9yV/fg35KSzPYqDskahPyDG+trXlRFF4jKNhCwY2JZRwU62wELu+rbSVju1wmht0fB1Xj2dmp8sVRXqEMMhnrzRitAWIoO8t1vJEFxCafftFoobqGkqgg/Ecms78Ew0Fg=
-  - secure: uaCbSdWqE6s0QkXv3xewK2YHBijKhe5Y1gM2fle8pBO9FfaTgkOBM3g+xdUAmMCCBVcMiXA+F1TpWkmI7xPwnqPoUweLlrG+MziNicIJeEL3ner2RxWgWMblc6wxdgbR3qplkJRB8nLW0oVh/w91iwQgXgYK6w6ldZk6m2Uxtm8=
-  - secure: pSBrB3uUuIer7pXMA+4iAJrUgQsKJOkoq2js/Iagh/cVnxv/KF8yp7rvRRyt3hTsAuyNnVswD8CUY0aEhp7SJit29Dbc1IlFJVVcS+AGKByhjeKn0ZWEEaaGfy+guQgiYJQkjLSCSUAyGXbG1Hi6fvgek5uiNXaF5NdWZG/NDGc=
-  - secure: wuNDwcLoHGonW6+pAAOkku21y4LEbcmg/ZZ6l/9fEK6ipip22N4s5sC+BGK22Z/h2up7cUvDq5EpXYICkFYD3XGAWnTrq3dr5xfKn0I1AbyNNCgEjYS5rGOuboqr+rDY+acmP1DJaZcGEDJxTF3BTMZrsYm0a4TviurKToLDFGk=
-  - secure: skldy2KFTrS1+dYztKdShHAlpBK8WEva1M9prbGyiUPGmagCHxbic+ezKLX+Juo4zkz9LGE/C3dFv/Em9sbtpYpt3irZGAApQaQvmVrIC1xnNDRYGajzIMDcPrlZHYliSit0BNh5JMArvP8oBSqec78x84K5AOjOBb5FcS0wQas=
-  - secure: GmtfTy/Y7GxwBfCZWJSbUVNC5Sqp7gkFXDzTHuMcqZYgJ5nheochwx96LvCcqEq5ZO51MB4vBdvTpkzF51+qkcUwmznPqKNl1bw9eDymtUBES5e61vHKxxzbi7V0eDgXgRv2Jf3oIqaer/uwFQ0RQtV7ZjcP277fPwViSL4HHtk=
-  - secure: EEJ0///VYS9BXF0nktMtxRIiUC5tXJNrTrpV20xut3CybiVAWsOvKqcBoKHJBVfHY4xa40LvTc5lFJcBlRkC6o0WkfuGMP1UBSHqf8iuAvUS9dlkIbMWpqIOnfWsGpUaNwfBmfYc57ajp7njiIma5SWUwaDseRq5lK9WqTd1/9k=
-  - secure: b33BHVj77XSmTXz7e6FFtDrNZb05QzYVGHdX/odha6t6oZNUCaHd/0d2m+wS7yz7z96MgKwQTYwuqIqfCZcNP28C8iIsIMCC8mQJ7OLO72e7u++qqCjPAG09vTyYHLoGmKJOPsMU3rP7Foljt4AL9dIP60zTRHmKMbUc6rLqIRI=
-  - secure: IazD8x0ovMbAHJ25Z7fukVg+EsbaNBAFP+pLGswViBvnhJcqBnY0krOzp7Y8lGwZP4gA9mKXD7OZ61ZFGawefauTGvc+AQcb1DfK/eda4Xb0NYXeKCLFcE+Z/6u/YYSXHlqpyFTe+UEbvkGFESSzWHPJ7hbvhceodN9EXakGgMg=
-  - secure: psyY+PNP4CjH/lL14Yi2N15olr31ZoQ5qEIFmn+ieAOEIbeA4F7Rbkemw2ocQYum1V5sBu0wTUUeBSqvcmcv5xtXC3/PaAL8urWLkf6SzIbXizBUNCPFYM/4ukzyRhATRMEEBr6s/EWnxhm/ONJjaW7VFRBP9de6jwOWzNPXSl0=
-  - secure: yzl19RZo0ZgH9AxojxICIxfXo2rGX1/z3g2b2MaDFCJPJTUHiE6GuqGfUKlO90Ud86WD7YDiYhw8wNblw2Zmv8DKPNrdMuQ/feG58xbdOAxU4vu0kaSKYHGaz5TXsz6LSfLFEB5knPB2fm29mJJ9N2A/ZhMgzDu9f2gbbD+NM18=
-  - secure: eKg0Y3uRh862EfhaYlV2YbMu24pmSW7CpqOW+lZjPAbEuQ6Lq+1p2kTsdjJx7D0GWr1bUoLcjY+xvqQoyC266Sg9FkunMCSYvEhvFicpwKBf3FpsHWViiOHJaDluxSMpXiiLKOjTvYORZ3eUkMZoa79Y1rgFUgWahNlQMkS4Oro=
-  - secure: ReOQIW7PcOeRhR9xtWp4Qn6F+ONR3P/o2GlMFUrFnyZnJG7IdwUovAYkN5ETDKcfxlmCt9CZEPW++C6cLbDqud+MPEumr/xEACN4y5cPAfMJStUnLGuAgQPa8SMM0IS4O0/Tq45PLoHGknJHgdq23R7KQq/JIrmTb2EHWDsrrVY=
-  - secure: IqYr8EAK8VlWDvWTeLmWZ79fOzRU4kuqJB5r6eVg8CiHtnXGbIgCqoP0gk6rvZIPUhDKNdPdM5C61RISVh8iX6EOMZRIeq66NttbBl/k21hk5GVzqLn+JKhBkVhQnd9zoR8xb87QuOrKbs3/KKR64OTl/ZNotQHWLJk2L4JFZAE=
-  - secure: riOvhrRhd875iphbDw9aSzDI5XJTYqD5JlL45B6GOO9ZqO5wdVEfsyekQiFsZZYneqBfpxYdLrspK5b4II6aqDI2qpLHqfyYS1SDBOyCUZ63d9fCyyVnfH7rDuFFuJNknTaNg3byNfQJZjjSSH5hP3OZ6rEmCiLLo7y7CXOEEt0=
-  - secure: rCcKNW/lMtS/rQhmvDhbulzx/fUEyt2VJWyj5GGVkPs7nUKvZairkIIDkz72zpl8BGb2+3400D8+dhZ7O7cnHiPT8wTIStwfe1Th/OrM17nXs3FgbvYyIIvT/olJjb76Pyd3HhdVX7qdCfRSZBkKK46R2HcGwnfFItE0cC881kU=
-  - secure: p3D/Ge1mxQd3BPWWr12ZGZMxmmel4yjMGtFFZFBWNpETAAwBixpBjUZJmgvHXv0VTNY15oSRzaMuMTvJt+h0Qotvf28bXSLTIq6RjaeSLqUv7uqETJbg0ow8p3ZqDPA1Dyie69PxncgMj6EySn2ht2sE68/IPAJvw4f28vhaI6g=
-  - secure: v35hCfe8pH4JqmqKc28dbVQPUNbvBwpsrR5fAJdxGuP5sHm9gJTyRgdrpTDdkcO3cbK28wfq20VMCiUff2xZGi0933BY5GFY+1rpEU4MiK11rp0Lozvf5XZFgfqmzIK1LJ1cqR8Ki51Shhs8wz82mtOI4tFBcHW/mOL93ynQefM=
-  - secure: DiW/5CY5AtoUiXge39tQxcwhS7eaNtFUHBF4hvdiutXmXD7KssYW9DnYMc4fK0kXkJfSX+ogYgfkjE6YxOLMw+ToYtHe11oWbERWH+ekrm2yHhHrIrqapPHMgX1Vtg1ZP0QsrTRz9tvNSvkv2Hza2tfEAUshty/LQcaDLRPo+C8=
-  - secure: AzVzaFu0HCouQBakdOdg0tr75QZJoMetC5tgGFkgcmHckUnzb+dc+fd86cMLyxRH/TDOLYr01rK3Or0CI6SzWAc4EkcACV8ViwQy7Ey0785jU3JIOdTpe3p+pPI4SC8o+TfdGlTeWCAXGmIsBaEzrtNGXKlkwcima7TQwq1NZGo=
-  - secure: P7qVSgj4gZlPuPy1AOw1HL035JpnNlfgHlU8AIY84Jd6nqDoBGiQEOjd6SKd1/CxU0b7+9DEYkJss7hBH2IBhyPW/66VkQcimdtmGCyKo+JViRiwL6rlAFVzOrqfbtEuJFieL2iYGKgiee/x/m+P1TdD3RmI6BFgktnyYA9bxHg=
-  - secure: gCmrktMEl6FECEz6gsJ2ouRbXo/m+t+GbsM/Baq010llUd+1giWw3MyJ3mKZZjDetl6i+apobn1iVaVjCwocQCW3rgYUW3hfF0+9Y/fFAaQEh31gojrI3Tz5z/+Xz9Ebu1W+EnYPM4u51aZTmiuWST6aKhbJnLPCswjv0soMrDA=
-  - secure: NaCv4MOO5QIB4vyRS//2+aY5AygpTLoeFzmJNpVDGIBsq2iSopxSBQp8XpoPxYwZSkNoqaPe+sQMeBNtRfV6zU5x6kWwGFucAtjcJILDd87vBVD7JY4zn5qopuK9oyPiuBqUU+B3WaV15ZBW9iuWo+2XOtXNVXyLtDpRMDE434w=
+after_success:
+  # CREATE GIT TAG
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
+  - echo -n $GIT_TAG > public/version
+  - git commit -m "Set build VERSION number" public/version
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+  - git push --quiet https://$GITHUB_API_KEY@github.com/chenqingspring/pm2.5-inquiry $GIT_TAG > /dev/null 2>&1
