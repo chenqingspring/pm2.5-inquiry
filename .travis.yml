@@ -1,9 +1,6 @@
 language: ruby
 rvm:
 - 2.0.0
-after_script: ./deploy.sh
-services:
-- mongodb
 env:
   global:
   - secure: U0QXe1gm7L74Jj6Q5bXZuW9/jG151tFciUTqj0JoehLLkCtFHHcuBr8XlQnXItDFiRgKwVjt8htsm40BjcH/N2IOiRYflag6giG+aOg7XJJvGo+IX8umzk41QTxel1Uz3vssGj4zDqOrrcJkKoFFHcqhU11VCV0PAmK93J9pj9I=
