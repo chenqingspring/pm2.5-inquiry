@@ -6,6 +6,5 @@ after_success:
   - git config --global user.email "builds@travis-ci.com"
   - git config --global user.name "Travis CI"
   - export GIT_TAG=build-(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
-  - echo -n $GIT_TAG > public/version
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-  - git push --quiet https://$GITHUB_API_KEY@github.com/chenqingspring/pm2.5-inquiry $GIT_TAG > /dev/null 2>&1
+  - git tag -a $GIT_TAG  -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+  - git push --tags --quiet https://$GITHUB_API_KEY@github.com/chenqingspring/pm2.5-inquiry
