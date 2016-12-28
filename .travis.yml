@@ -5,5 +5,5 @@ after_success:
   # CREATE GIT TAG
   - git config --global user.email "builds@travis-ci.com"
   - git config --global user.name "Travis CI"
-  - git tag build-(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
+  - git tag build-$TRAVIS_BUILD_NUMBER
   - git push --tags --quiet https://$GITHUB_API_KEY@github.com/chenqingspring/pm2.5-inquiry
