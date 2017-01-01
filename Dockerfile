@@ -8,7 +8,7 @@ RUN gem install bundler -V
 
 COPY Gemfile /opt/pm25/Gemfile
 COPY Gemfile.lock /opt/pm25/Gemfile.lock
-RUN bundle install --jobs 20 --retry 5 -V
+RUN bundle install --jobs 20 --retry 5 --with=production -V
 
 COPY . /opt/pm25
 

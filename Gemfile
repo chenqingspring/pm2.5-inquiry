@@ -4,7 +4,6 @@ group :production do
   gem 'sinatra'
   gem 'wei-backend', '0.1.4'
   gem 'httparty'
-  gem 'rufus-scheduler'
 end
 
 group :development do
