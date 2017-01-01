@@ -5,10 +5,7 @@ RUN mkdir -p /opt/pm25
 WORKDIR /opt/pm25
 
 RUN gem install bundler -V
-
-COPY Gemfile /opt/pm25/Gemfile
-COPY Gemfile.lock /opt/pm25/Gemfile.lock
-RUN bundle install --jobs 20 --retry 5 --without development test -V
+RUN gem install nokogiri -v '1.6.1' -V
 
 COPY . /opt/pm25
 
