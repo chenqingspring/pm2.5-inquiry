@@ -10,7 +10,7 @@ RUN gem install json -v '1.8.1' -V
 
 COPY Gemfile /opt/pm25/Gemfile
 COPY Gemfile.lock /opt/pm25/Gemfile.lock
-RUN bundle install --jobs 20 --retry 5 --without development test -V
+RUN bundle install --jobs 20 --retry 5 -V
 
 COPY . /opt/pm25
 
