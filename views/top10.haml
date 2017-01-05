@@ -4,7 +4,7 @@
   #top
     %tbody
       %h4.top-title
-        ='今日全国pm2.5十佳城市'
+        = "今日全国pm2.5十差城市 #{'(暂无结果)' if cities.empty?}"
       - cities.each do |city|
         = haml :render_by_value, :locals => { :pm2_5 => city[:pm2_5], :position => "#{cities.index(city)+1}.#{city[:area]}" }
       = haml :search_box
