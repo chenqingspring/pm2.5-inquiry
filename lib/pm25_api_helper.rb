@@ -33,7 +33,8 @@ module Pm25ApiHelper
 
   def self.bottom10_cities
     cities = retrieve_city_ranking_data
-    cities[cities.length-10..cities.length-1].reverse
+    ten_cities = cities[cities.length-10..cities.length-1]
+    ten_cities.nil? ? [] : ten_cities.reverse
   end
 
   def self.parsed_json_builder city_name
