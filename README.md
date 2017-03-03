@@ -1,4 +1,4 @@
-![](https://www.codeship.io/projects/1d9ece90-cee7-0131-4d5d-1ac3e6e153a0/status)
+![](http://chenqingspring-pm25.daoapp.io/images/qrcode.png)
 
 pm2.5-inquiry
 =============
