@@ -4,6 +4,7 @@ group :production do
   gem 'sinatra'
   gem 'wei-backend', '0.1.4'
   gem 'httparty'
+  gem 'rake'
 end
 
 group :development do
