@@ -1,13 +1,13 @@
 module Pm25ApiHelper
   def self.update_city_info city_name
     begin
-      HttpClient.post('https://pm25-weapp.leanapp.cn/1.1/functions/searchByLocation',
+      JSON.parse(HttpClient.post('https://pm25-weapp.leanapp.cn/1.1/functions/searchByLocation',
                       {:body => {'cityName' => city_name }.to_json,
                        :headers => {'X-LC-Id' => 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz',
                                     'X-LC-Key' => 'y73IcLAkxJznpDxczxmA9sak',
                                     'Content-Type' => 'application/json',
                                     'Accept' => '*/*'}
-                      }).parsed_response['result']
+                      }).parsed_response['result'])
     rescue
       return {}
     end
