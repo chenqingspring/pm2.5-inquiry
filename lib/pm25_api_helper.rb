@@ -6,8 +6,7 @@ module Pm25ApiHelper
                        :headers => {'X-LC-Id' => 'PmV1nY70lW7jOSgdaz77Ek4x-gzGzoHsz',
                                     'X-LC-Key' => 'y73IcLAkxJznpDxczxmA9sak',
                                     'Content-Type' => 'application/json',
-                                    'Accept' => '*/*'}
-                      }).parsed_response['result'])
+                                    'Accept' => '*/*'}}).parsed_response['result'])
     rescue
       return {}
     end
