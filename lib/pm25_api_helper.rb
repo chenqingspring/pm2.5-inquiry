@@ -7,7 +7,7 @@ module Pm25ApiHelper
                                     'X-LC-Key' => 'y73IcLAkxJznpDxczxmA9sak',
                                     'Content-Type' => 'application/json',
                                     'Accept' => '*/*'}
-                      }).parsed_response
+                      }).parsed_response['result']
     rescue
       return {}
     end
